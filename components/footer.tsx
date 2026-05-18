@@ -128,7 +128,7 @@ export function Footer() {
             <ul className="space-y-4">
               <li>
                 <p className="text-sm font-bold mb-1" style={{ color: '#fff', fontFamily: 'var(--font-heading)' }}>
-                  Mayur Dhomne
+                  Akash Dhomne
                 </p>
                 <p className="text-xs" style={{ color: 'rgba(255,255,255,0.5)', fontFamily: 'var(--font-sans)' }}>Wealth Advisor, Mahalaxmi Infra</p>
               </li>
