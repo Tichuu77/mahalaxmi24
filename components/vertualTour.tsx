@@ -7,7 +7,7 @@ export default function VirtualTourHero() {
     <section
       className="relative min-h-[80vh] flex items-center overflow-hidden bg-fixed-mobile"
       style={{
-        backgroundImage: 'url("/gallery_4.jpg")',
+        backgroundImage: ' ',
         backgroundSize: 'cover',
         backgroundPosition: 'center top',
         backgroundAttachment: 'fixed',

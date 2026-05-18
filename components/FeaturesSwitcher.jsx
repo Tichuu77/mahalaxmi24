@@ -2,13 +2,13 @@
 import React, { useState, useRef, useEffect } from 'react';
 
 const features = [
-  {
-    title: 'Master Layout Plan',
-    description:
-      'A meticulously planned township with wide internal roads, numbered plots, a central amenity zone, and a lush green belt — all visible at a glance from above.',
-    tab: 'Layout Plan',
-    image: '/gallery_4.jpg',
-  },
+  // {
+  //   title: 'Master Layout Plan',
+  //   description:
+  //     'A meticulously planned township with wide internal roads, numbered plots, a central amenity zone, and a lush green belt — all visible at a glance from above.',
+  //   tab: 'Layout Plan',
+  //   image: '/gallery_4.jpg',
+  // },
   {
     title: 'Garden Seating Lounge',
     description:

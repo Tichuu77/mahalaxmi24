@@ -16,9 +16,7 @@ const galleryItems: GalleryItem[] = [
   { id: 9, src: '/gallery_10.jpeg', alt: 'Gallery Image 9' , span: 'row-span-2'},
   { id: 10, src: '/gallery_11.jpeg', alt: 'Gallery Image 10' , span: 'row-span-1'},
   { id: 11, src: '/gallery_12.jpeg', alt: 'Gallery Image 11' , span: 'row-span-2'},
-  { id: 12, src: '/gallery_13.jpeg', alt: 'Gallery Image 12' , span: 'row-span-1'},
-  { id: 13, src: '/gallery_14.jpeg', alt: 'Gallery Image 13' , span: 'row-span-2'},
-  { id: 14, src: '/gallery_15.jpeg', alt: 'Gallery Image 14' , span: 'row-span-2'}];
+]
 
 export default function GallerySection() {
   const [selectedId, setSelectedId] = useState<number | null>(null);

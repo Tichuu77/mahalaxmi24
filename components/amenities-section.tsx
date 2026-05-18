@@ -12,7 +12,7 @@ const showcaseImages = [
   { src: '/gallery_5.jpg', label: "Children's Play Area" },
   { src: '/gallery_1.jpg', label: 'Garden Seating Lounge' },
   { src: '/gallery_3.jpg', label: 'Landscape & Green Spaces' },
-  { src: '/gallery_4.jpg', label: 'Master Layout Plan' },
+  // { src: '/gallery_4.jpg', label: 'Master Layout Plan' },
 ];
 
 /* ── Amenities with clear, understandable icons ─────────────── */
