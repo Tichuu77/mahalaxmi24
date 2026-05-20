@@ -21,7 +21,6 @@ export default function Home() {
       <FeaturesSwitcher />
       <AmenitiesSection />
       <VirtualTourHero />
-      <GallerySection />
       <TestimonialsSection />
       <MiniBlogsSection />
       <FAQSection />
