@@ -12,31 +12,28 @@ const navLinks = [
 ];
 
 const otherProjects = [
-  { name: 'Mahalaxmi Nagar 46', href: 'https://mahalaxmiinfra.in/project/mahalaxmi-nagar-46', image: '/project_46.jpg', description: 'NIT / NMRDA sanctioned layout with RLGood location for investmentLayout Fencing with Entrance GatePlantation to Entire LayoutAll the basic facilities included' },
-  { name: 'Mahalaxmi Nagar 45', href: 'https://mahalaxmiinfra.in/project/mahalaxmi-nagar-45', image: '/project_45.jpg', description: 'NIT / NMRDA sanctioned layout with RLGood location for investmentLayout Fencing with Entrance GatePlantation to Entire LayoutAll the basic facilities included' },
-  { name: 'Mahalaxmi Nagar 44', href: 'https://mahalaxmiinfra.in/project/mahalaxmi-nagar-44', image: '/project_44.jpg', description: 'NIT / NMRDA sanctioned layout with RLGood location for investmentLayout Fencing with Entrance GatePlantation to Entire LayoutAll the basic facilities included' },
-  { name: 'Tattva Apas', href: 'https://mahalaxmiinfra.in/project/tattva-apas', image: '/tatva-apas.webp', description: 'Tattva Apas, by VCMI Constructions LLP, offers contemporary living with 100 + meticulously crafted apartments. Featuring amenities like landscaped gardens, play areas, and fitness centers, it fosters a vibrant social atmosphere. Seamlessly integrated with surroundings, the complex includes a sprawling public green space spanning 50,000 sq. ft. Emphasizing superior construction and modern aesthetics, Tattva Apas ensures a premium standard of living, ideal for convenience and community. It more than just a residence; it is a sanctuary where residents thrive amidst modern comforts.' },
-  { name: 'Mahalaxmi Nagar 52', href: 'https://mahalaxmiinfra.in/project/mahalaxmi-nagar-52', image: '/project_52.jpg', description: 'NIT / NMRDA sanctioned layout with RLGood location for investmentLayout Fencing with Entrance GatePlantation to Entire LayoutAll the basic facilities included' },
-  { name: 'Mahalaxmi Nagar 47', href: 'https://mahalaxmiinfra.in/project/mahalaxmi-nagar-47', image: '/project_47.jpg', description: 'NIT / NMRDA sanctioned layout with RLGood location for investmentLayout Fencing with Entrance GatePlantation to Entire LayoutAll the basic facilities included' },
-  { name: 'Mahalaxmi Nagar 43', href: 'https://mahalaxmiinfra.in/project/mahalaxmi-nagar-43', image: '/project_43.jpg', description: 'NIT / NMRDA sanctioned layout with RLGood location for investmentLayout Fencing with Entrance GatePlantation to Entire LayoutAll the basic facilities included' },
-  { name: 'Mahalaxmi Nagar 42', href: 'https://mahalaxmiinfra.in/project/mahalaxmi-nagar-42', image: '/project_42.webp', description: 'Mahalaxmi Developers launched the project Mahalaxmi Nagar 42. The layout is NIT / NMRDA sanctioned with RL. Bank finance is available 75% to 80% from any nationalized bank.' },
-  { name: 'Mahalaxmi Nagar 41', href: 'https://mahalaxmiinfra.in/project/mahalaxmi-nagar-41', image: '/project_41.webp', description: 'Mahalaxmi Developers launched the project Mahalaxmi Nagar 41. The layout is NIT / NMRDA sanctioned with RL. Bank finance is available 75% to 80% from any nationalized bank' },
-  { name: 'Mahalaxmi Nagar 40', href: 'https://mahalaxmiinfra.in/project/mahalaxmi-nagar-40', image: '/project_40.webp', description: 'Mahalaxmi Developers launched the project Mahalaxmi Nagar 40. The layout is NIT / NMRDA sanctioned with RL. Bank finance is available 75% to 80% from any nationalized bank.' },
-  { name: 'Mahalaxmi Nagar 39', href: 'https://mahalaxmiinfra.in/project/mahalaxmi-nagar-39', image: '/project_39.webp', description: 'Mahalaxmi Developers launched the project Mahalaxmi Nagar 39. The layout is NIT / NMRDA sanctioned with RL. Bank finance is available 75% to 80% from any nationalized bank.' },
-  { name: 'Mahalaxmi Nagar 38', href: 'https://mahalaxmiinfra.in/project/mahalaxmi-nagar-38', image: '/project_38.webp', description: 'Mahalaxmi Developers launched the project Mahalaxmi Nagar 38. The layout is NIT / NMRDA sanctioned with RL. Bank finance is available 75% to 80% from any nationalized bank.' },
-  { name: 'Mahalaxmi Nagar 31', href: 'https://mahalaxmiinfra.in/project/mahalaxmi-nagar-31', image: '/project_31.webp', description: 'Mahalaxmi Developers launched the project Mahalaxmi Nagar 31. The layout is NIT / NMRDA sanctioned with RL. Bank finance is available 75% to 80% from any nationalized bank.' },
-  { name: 'Mahalaxmi Nagar 30', href: 'https://mahalaxmiinfra.in/project/mahalaxmi-nagar-30', image: '/project_30.webp', description: 'Mahalaxmi Developers launched the project Mahalaxmi Nagar 30. The layout is NIT / NMRDA sanctioned with RL. Bank finance is available 75% to 80% from any nationalized bank.' },
+  { name: 'Mahalaxmi Nagar 46', location: 'Pandhurna Umred Road', image: '/project_46.jpg',  },
+  { name: 'Mahalaxmi Nagar 45', location: 'Sumthana', image: '/project_45.jpg',  },
+  { name: 'Mahalaxmi Nagar 44', location: 'Tarodi', image: '/project_44.jpg',  },
+  { name: 'Tattva Apas', location: 'Beltarodi', image: '/tatva-apas.webp',  },
+  { name: 'Mahalaxmi Nagar 52', location: 'Dhamna', image: '/project_52.jpg',  },
+  { name: 'Mahalaxmi Nagar 47', location: 'New Nanda', image: '/project_47.jpg',  },
+  { name: 'Mahalaxmi Nagar 43', location: 'Shankarpur', image: '/project_43.jpg',  },
+  { name: 'Mahalaxmi Nagar 42', location: 'Jamtha', image: '/project_42.webp',  },
+  { name: 'Mahalaxmi Nagar 41', location: 'Gumgaon', image: '/project_41.webp',  },
+  { name: 'Mahalaxmi Nagar 40', location: 'Kotiwada', image: '/project_40.webp',  },
+  { name: 'Mahalaxmi Nagar 38', location: 'Mhasala', image: '/project_38.webp',  },
+  { name: 'Mahalaxmi Nagar 31', location: 'Pimpla', image: '/project_31.webp',  },
+  { name: 'Mahalaxmi Nagar 30', location: 'Takli', image: '/project_30.webp',  },
 ];
 
 type Project = typeof otherProjects[0];
 
 function ProjectPopup({ project, onClose }: { project: Project; onClose: () => void }) {
-  // Close on backdrop click
   const handleBackdrop = (e: React.MouseEvent<HTMLDivElement>) => {
     if (e.target === e.currentTarget) onClose();
   };
 
-  // Close on Escape
   useEffect(() => {
     const handler = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose(); };
     document.addEventListener('keydown', handler);
@@ -79,7 +76,6 @@ function ProjectPopup({ project, onClose }: { project: Project; onClose: () => v
             style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.9 }}
             onError={(e) => { (e.currentTarget as HTMLImageElement).style.opacity = '0'; }}
           />
-          {/* Close button */}
           <button
             onClick={onClose}
             style={{
@@ -110,47 +106,68 @@ function ProjectPopup({ project, onClose }: { project: Project; onClose: () => v
               fontSize: '1.2rem',
               fontWeight: 700,
               color: 'var(--secondary)',
-              marginBottom: '10px',
+              marginBottom: '6px',
               textTransform: 'uppercase',
               letterSpacing: '0.06em',
             }}
           >
             {project.name}
           </h3>
-          <p
-            style={{
-              fontFamily: 'var(--font-sans)',
-              fontSize: '0.88rem',
-              color: 'rgba(255,255,255,0.78)',
-              lineHeight: 1.65,
-              marginBottom: '20px',
-            }}
-          >
-            {project.description}
+          <p style={{ fontFamily: 'var(--font-sans)', fontSize: '0.78rem', color: 'rgba(255,255,255,0.5)', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '4px' }}>
+            <MapPin size={12} /> {project.location}
           </p>
-          <a
-            href={project.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              display: 'inline-block',
-              padding: '10px 24px',
-              borderRadius: '999px',
-              background: 'var(--secondary)',
-              color: '#fff',
-              fontFamily: 'var(--font-heading)',
-              fontWeight: 700,
-              fontSize: '0.8rem',
-              textTransform: 'uppercase',
-              letterSpacing: '0.08em',
-              textDecoration: 'none',
-              transition: 'opacity 0.2s',
-            }}
-            onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.85')}
-            onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
-          >
-            View Project →
-          </a>
+          
+          <div style={{ display: 'flex', gap: '10px' }}>
+            <a
+              href="tel:+919327210650"
+              style={{
+                flex: 1,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '7px',
+                padding: '10px 16px',
+                borderRadius: '999px',
+                background: 'var(--secondary)',
+                color: '#fff',
+                fontFamily: 'var(--font-heading)',
+                fontWeight: 700,
+                fontSize: '0.78rem',
+                textTransform: 'uppercase',
+                letterSpacing: '0.07em',
+                textDecoration: 'none',
+              }}
+            >
+              <Phone size={13} /> Call
+            </a>
+            <a
+              href="https://wa.me/919327210650"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                flex: 1,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '7px',
+                padding: '10px 16px',
+                borderRadius: '999px',
+                background: '#25D366',
+                color: '#fff',
+                fontFamily: 'var(--font-heading)',
+                fontWeight: 700,
+                fontSize: '0.78rem',
+                textTransform: 'uppercase',
+                letterSpacing: '0.07em',
+                textDecoration: 'none',
+              }}
+            >
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+              </svg>
+              WhatsApp
+            </a>
+          </div>
         </div>
       </div>
 
@@ -170,9 +187,12 @@ export default function HeroSection() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMobileProjectsOpen, setIsMobileProjectsOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [showAllPills, setShowAllPills] = useState(false);
   const heroRef = useRef<HTMLElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const { openPopup } = usePopup();
+
+  const PILLS_INITIAL = 4;
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth <= 768);
@@ -196,6 +216,10 @@ export default function HeroSection() {
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
+
+  const visiblePills = isMobile && !showAllPills
+    ? otherProjects.slice(0, PILLS_INITIAL)
+    : otherProjects;
 
   return (
     <>
@@ -242,9 +266,15 @@ export default function HeroSection() {
 
               <div style={{ position: 'absolute', top: 'calc(100% + 16px)', right: 0, minWidth: '220px', background: 'rgba(13, 42, 33, 0.98)', backdropFilter: 'blur(16px)', borderRadius: '12px', boxShadow: '0 8px 32px rgba(0,0,0,0.45)', border: '1px solid rgba(255,255,255,0.1)', overflow: 'hidden', maxHeight: isDropdownOpen ? '420px' : '0', opacity: isDropdownOpen ? 1 : 0, transition: 'max-height 0.35s cubic-bezier(0.4,0,0.2,1), opacity 0.25s ease', overflowY: isDropdownOpen ? 'auto' : 'hidden', pointerEvents: isDropdownOpen ? 'auto' : 'none', scrollbarWidth: 'thin', scrollbarColor: 'rgba(255,255,255,0.2) transparent' }}>
                 {otherProjects.map((project, idx) => (
-                  <a key={project.href} href={project.href} target="_blank" rel="noopener noreferrer" onClick={() => setIsDropdownOpen(false)} style={{ display: 'block', padding: '10px 18px', fontSize: '0.8rem', fontFamily: 'var(--font-heading)', fontWeight: 600, letterSpacing: '0.06em', color: 'rgba(255,255,255,0.85)', textDecoration: 'none', transition: 'background 0.18s, color 0.18s', borderBottom: idx < otherProjects.length - 1 ? '1px solid rgba(255,255,255,0.07)' : 'none', textTransform: 'uppercase' }} onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.08)'; (e.currentTarget as HTMLElement).style.color = 'var(--secondary)'; }} onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = 'transparent'; (e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,0.85)'; }}>
+                  <button
+                    key={project.name}
+                    onClick={() => { setSelectedProject(project); setIsDropdownOpen(false); }}
+                    style={{ display: 'block', width: '100%', textAlign: 'left', padding: '10px 18px', fontSize: '0.8rem', fontFamily: 'var(--font-heading)', fontWeight: 600, letterSpacing: '0.06em', color: 'rgba(255,255,255,0.85)', background: 'transparent', border: 'none', transition: 'background 0.18s, color 0.18s', borderBottom: idx < otherProjects.length - 1 ? '1px solid rgba(255,255,255,0.07)' : 'none', textTransform: 'uppercase', cursor: 'pointer' }}
+                    onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.08)'; (e.currentTarget as HTMLElement).style.color = 'var(--secondary)'; }}
+                    onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = 'transparent'; (e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,0.85)'; }}
+                  >
                     {project.name}
-                  </a>
+                  </button>
                 ))}
               </div>
             </div>
@@ -277,9 +307,15 @@ export default function HeroSection() {
               <div style={{ maxHeight: isMobileProjectsOpen ? '360px' : '0', overflow: 'hidden', transition: 'max-height 0.35s cubic-bezier(0.4,0,0.2,1)', overflowY: isMobileProjectsOpen ? 'auto' : 'hidden' }}>
                 <div style={{ marginLeft: '12px', borderLeft: '2px solid var(--secondary)', paddingLeft: '12px', marginTop: '4px', marginBottom: '8px' }}>
                   {otherProjects.map((project) => (
-                    <a key={project.href} href={project.href} target="_blank" rel="noopener noreferrer" onClick={() => setIsMenuOpen(false)} style={{ display: 'block', padding: '8px 6px', fontSize: '0.78rem', fontFamily: 'var(--font-heading)', fontWeight: 600, letterSpacing: '0.05em', color: 'rgba(255,255,255,0.75)', textDecoration: 'none', textTransform: 'uppercase', transition: 'color 0.18s' }} onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = 'var(--secondary)'; }} onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,0.75)'; }}>
+                    <button
+                      key={project.name}
+                      onClick={() => { setSelectedProject(project); setIsMenuOpen(false); }}
+                      style={{ display: 'block', width: '100%', textAlign: 'left', padding: '8px 6px', fontSize: '0.78rem', fontFamily: 'var(--font-heading)', fontWeight: 600, letterSpacing: '0.05em', color: 'rgba(255,255,255,0.75)', background: 'none', border: 'none', textTransform: 'uppercase', transition: 'color 0.18s', cursor: 'pointer' }}
+                      onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = 'var(--secondary)'; }}
+                      onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,0.75)'; }}
+                    >
                       {project.name}
-                    </a>
+                    </button>
                   ))}
                 </div>
               </div>
@@ -297,7 +333,7 @@ export default function HeroSection() {
       <section
         ref={heroRef}
         className="relative min-h-screen flex items-end md:items-center overflow-hidden"
-        style={{ background: '#0d2a20' }}
+        style={{ background: '#0d2a20',backgroundImage: 'url(/gallery_6.jpg)', backgroundSize: 'cover', backgroundPosition: 'center 40%' }}
         aria-label="Hero section"
       >
         <div className="absolute inset-0" style={{ backgroundImage: '', backgroundSize: 'cover', backgroundPosition: 'center 40%', animation: 'kenBurns 18s ease-in-out infinite alternate' }} />
@@ -327,21 +363,59 @@ export default function HeroSection() {
               </a>
             </div>
 
+               {/* Nearby Locations */}
+            <div className="mb-8">
+              <p
+                style={{
+                  fontFamily: 'var(--font-heading)',
+                  fontSize: '0.7rem',
+                  fontWeight: 700,
+                  letterSpacing: '0.12em',
+                  color: '#FFD700',
+                  textTransform: 'uppercase',
+                  marginBottom: '10px',
+                }}
+              >
+                Nearby Locations
+              </p>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+                {['D-Mart', 'Samrudhi Circle', 'Orange City Logistic Park', 'Era International School Sumthana'].map((place) => (
+                  <span
+                    key={place}
+                    style={{
+                      padding: '5px 13px',
+                      borderRadius: '999px',
+                      border: '1px solid #FFD700',
+                      background: 'rgba(255,255,255,0.06)',
+                      color: 'rgba(255,255,255,0.75)',
+                      fontFamily: 'var(--font-heading)',
+                      fontSize: '0.72rem',
+                      fontWeight: 600,
+                      letterSpacing: '0.05em',
+                      textTransform: 'uppercase',
+                    }}
+                  >
+                    {place}
+                  </span>
+                ))}
+              </div>
+            </div>
+
             {/* ── OTHER PROJECTS PILLS ── */}
             <div>
-              <p style={{ fontFamily: 'var(--font-heading)', fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.12em', color: 'rgba(255,255,255,0.45)', textTransform: 'uppercase', marginBottom: '10px' }}>
+              <p style={{ fontFamily: 'var(--font-heading)', fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.12em', color: '#FFD700', textTransform: 'uppercase', marginBottom: '10px' }}>
                 Other Projects
               </p>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-                {otherProjects.map((project) => (
+                {visiblePills.map((project) => (
                   <button
-                    key={project.href}
+                    key={project.name}
                     onClick={() => setSelectedProject(project)}
                     style={{
                       padding: '5px 13px',
                       borderRadius: '999px',
-                      border: '1px solid rgba(255,255,255,0.2)',
-                      background: 'rgba(255,255,255,0.06)',
+                      border: '1px solid #FFD700',
+                      background: 'transparent',
                       color: 'rgba(255,255,255,0.75)',
                       fontFamily: 'var(--font-heading)',
                       fontSize: '0.72rem',
@@ -353,20 +427,42 @@ export default function HeroSection() {
                     }}
                     onMouseEnter={(e) => {
                       const el = e.currentTarget;
-                      el.style.background = 'rgba(255,255,255,0.14)';
-                      el.style.borderColor = 'var(--secondary)';
+                      el.style.background = 'transparent';
+                      el.style.borderColor = '#FFEB3B';
                       el.style.color = '#fff';
                     }}
                     onMouseLeave={(e) => {
                       const el = e.currentTarget;
-                      el.style.background = 'rgba(255,255,255,0.06)';
-                      el.style.borderColor = 'rgba(255,255,255,0.2)';
+                      el.style.background = 'transparent';
+                      el.style.borderColor = '#FFD700';
                       el.style.color = 'rgba(255,255,255,0.75)';
                     }}
                   >
                     {project.name}
                   </button>
                 ))}
+
+                {isMobile && (
+                  <button
+                    onClick={() => setShowAllPills(!showAllPills)}
+                    style={{
+                      padding: '5px 13px',
+                      borderRadius: '999px',
+                      border: '1px solid var(--secondary)',
+                      background: 'rgba(255,255,255,0.06)',
+                      color: 'var(--secondary)',
+                      fontFamily: 'var(--font-heading)',
+                      fontSize: '0.72rem',
+                      fontWeight: 700,
+                      letterSpacing: '0.05em',
+                      textTransform: 'uppercase',
+                      cursor: 'pointer',
+                      transition: 'background 0.18s',
+                    }}
+                  >
+                    {showAllPills ? '− Less' : `+ ${otherProjects.length - PILLS_INITIAL} More`}
+                  </button>
+                )}
               </div>
             </div>
           </div>
