@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 import React, { useState, useEffect, useRef } from 'react';
 import { Menu, X, Phone, MapPin, ChevronDown } from 'lucide-react';
 import { usePopup } from './popup-context';
@@ -11,7 +11,7 @@ const navLinks = [
   { name: 'FAQ', href: '#faq_sec' },
 ];
 
-const otherProjects = [
+export const otherProjects = [
   { name: 'Mahalaxmi Nagar 46', location: 'Pandhurna Umred Road', image: '/project_46.jpg',  },
   { name: 'Mahalaxmi Nagar 45', location: 'Sumthana', image: '/project_45.jpg',  },
   { name: 'Mahalaxmi Nagar 44', location: 'Tarodi', image: '/project_44.jpg',  },
@@ -27,9 +27,9 @@ const otherProjects = [
   { name: 'Mahalaxmi Nagar 30', location: 'Takli', image: '/project_30.webp',  },
 ];
 
-type Project = typeof otherProjects[0];
+export type Project = typeof otherProjects[0];
 
-function ProjectPopup({ project, onClose }: { project: Project; onClose: () => void }) {
+export function ProjectPopup({ project, onClose }: { project: Project; onClose: () => void }) {
   const handleBackdrop = (e: React.MouseEvent<HTMLDivElement>) => {
     if (e.target === e.currentTarget) onClose();
   };
@@ -187,12 +187,9 @@ export default function HeroSection() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMobileProjectsOpen, setIsMobileProjectsOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-  const [showAllPills, setShowAllPills] = useState(false);
   const heroRef = useRef<HTMLElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const { openPopup } = usePopup();
-
-  const PILLS_INITIAL = 4;
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth <= 768);
@@ -216,10 +213,6 @@ export default function HeroSection() {
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
-
-  const visiblePills = isMobile && !showAllPills
-    ? otherProjects.slice(0, PILLS_INITIAL)
-    : otherProjects;
 
   return (
     <>
@@ -364,107 +357,7 @@ export default function HeroSection() {
             </div>
 
                {/* Nearby Locations */}
-            <div className="mb-8">
-              <p
-                style={{
-                  fontFamily: 'var(--font-heading)',
-                  fontSize: '0.7rem',
-                  fontWeight: 700,
-                  letterSpacing: '0.12em',
-                  color: '#FFD700',
-                  textTransform: 'uppercase',
-                  marginBottom: '10px',
-                }}
-              >
-                Nearby Locations
-              </p>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-                {['D-Mart', 'Samrudhi Circle', 'Orange City Logistic Park', 'Era International School Sumthana'].map((place) => (
-                  <span
-                    key={place}
-                    style={{
-                      padding: '5px 13px',
-                      borderRadius: '999px',
-                      border: '1px solid #FFD700',
-                      background: 'rgba(255,255,255,0.06)',
-                      color: 'rgba(255,255,255,0.75)',
-                      fontFamily: 'var(--font-heading)',
-                      fontSize: '0.72rem',
-                      fontWeight: 600,
-                      letterSpacing: '0.05em',
-                      textTransform: 'uppercase',
-                    }}
-                  >
-                    {place}
-                  </span>
-                ))}
-              </div>
-            </div>
 
-            {/* ── OTHER PROJECTS PILLS ── */}
-            <div>
-              <p style={{ fontFamily: 'var(--font-heading)', fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.12em', color: '#FFD700', textTransform: 'uppercase', marginBottom: '10px' }}>
-                Other Projects
-              </p>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-                {visiblePills.map((project) => (
-                  <button
-                    key={project.name}
-                    onClick={() => setSelectedProject(project)}
-                    style={{
-                      padding: '5px 13px',
-                      borderRadius: '999px',
-                      border: '1px solid #FFD700',
-                      background: 'transparent',
-                      color: 'rgba(255,255,255,0.75)',
-                      fontFamily: 'var(--font-heading)',
-                      fontSize: '0.72rem',
-                      fontWeight: 600,
-                      letterSpacing: '0.05em',
-                      textTransform: 'uppercase',
-                      cursor: 'pointer',
-                      transition: 'background 0.18s, border-color 0.18s, color 0.18s',
-                    }}
-                    onMouseEnter={(e) => {
-                      const el = e.currentTarget;
-                      el.style.background = 'transparent';
-                      el.style.borderColor = '#FFEB3B';
-                      el.style.color = '#fff';
-                    }}
-                    onMouseLeave={(e) => {
-                      const el = e.currentTarget;
-                      el.style.background = 'transparent';
-                      el.style.borderColor = '#FFD700';
-                      el.style.color = 'rgba(255,255,255,0.75)';
-                    }}
-                  >
-                    {project.name}
-                  </button>
-                ))}
-
-                {isMobile && (
-                  <button
-                    onClick={() => setShowAllPills(!showAllPills)}
-                    style={{
-                      padding: '5px 13px',
-                      borderRadius: '999px',
-                      border: '1px solid var(--secondary)',
-                      background: 'rgba(255,255,255,0.06)',
-                      color: 'var(--secondary)',
-                      fontFamily: 'var(--font-heading)',
-                      fontSize: '0.72rem',
-                      fontWeight: 700,
-                      letterSpacing: '0.05em',
-                      textTransform: 'uppercase',
-                      cursor: 'pointer',
-                      transition: 'background 0.18s',
-                    }}
-                  >
-                    {showAllPills ? '− Less' : `+ ${otherProjects.length - PILLS_INITIAL} More`}
-                  </button>
-                )}
-              </div>
-            </div>
           </div>
         </div>
 

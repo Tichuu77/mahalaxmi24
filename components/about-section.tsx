@@ -1,7 +1,8 @@
-﻿'use client';
-import React, { useState } from 'react';
-import { Send, CheckCircle, AlertCircle, Shield, Leaf, Banknote } from 'lucide-react';
+'use client';
+import React, { useState, useEffect } from 'react';
+import { Send, CheckCircle, AlertCircle, Shield, Leaf, Banknote, MapPin } from 'lucide-react';
 import { useRouter } from 'next/navigation';
+import { otherProjects, Project, ProjectPopup } from './hero-section';
 
 const highlights = [
   {
@@ -26,6 +27,18 @@ export default function AboutSection() {
   const [formData, setFormData] = useState({ name: '', phone: '', requiredLocation: '',  message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [showAllPills, setShowAllPills] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const PILLS_INITIAL = 4;
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -176,6 +189,73 @@ export default function AboutSection() {
                 </form>
               </div>
             </div>
+
+            {/* ── OTHER PROJECTS PILLS ── */}
+            <div className="mt-6 p-6 rounded-2xl shadow-xl" style={{ background: 'var(--primary)' }}>
+              <p style={{ fontFamily: 'var(--font-heading)', fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.12em', color: '#FFD700', textTransform: 'uppercase', marginBottom: '12px' }}>
+                Other Projects
+              </p>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+                {((isMobile && !showAllPills) ? otherProjects.slice(0, PILLS_INITIAL) : otherProjects).map((project) => (
+                  <button
+                    key={project.name}
+                    type="button"
+                    onClick={() => setSelectedProject(project)}
+                    style={{
+                      padding: '5px 13px',
+                      borderRadius: '999px',
+                      border: '1px solid #FFD700',
+                      background: 'transparent',
+                      color: 'rgba(255,255,255,0.75)',
+                      fontFamily: 'var(--font-heading)',
+                      fontSize: '0.72rem',
+                      fontWeight: 600,
+                      letterSpacing: '0.05em',
+                      textTransform: 'uppercase',
+                      cursor: 'pointer',
+                      transition: 'background 0.18s, border-color 0.18s, color 0.18s',
+                    }}
+                    onMouseEnter={(e) => {
+                      const el = e.currentTarget;
+                      el.style.background = 'transparent';
+                      el.style.borderColor = '#FFEB3B';
+                      el.style.color = '#fff';
+                    }}
+                    onMouseLeave={(e) => {
+                      const el = e.currentTarget;
+                      el.style.background = 'transparent';
+                      el.style.borderColor = '#FFD700';
+                      el.style.color = 'rgba(255,255,255,0.75)';
+                    }}
+                  >
+                    {project.name}
+                  </button>
+                ))}
+
+                {isMobile && (
+                  <button
+                    type="button"
+                    onClick={() => setShowAllPills(!showAllPills)}
+                    style={{
+                      padding: '5px 13px',
+                      borderRadius: '999px',
+                      border: '1px solid var(--secondary)',
+                      background: 'rgba(255,255,255,0.06)',
+                      color: 'var(--secondary)',
+                      fontFamily: 'var(--font-heading)',
+                      fontSize: '0.72rem',
+                      fontWeight: 700,
+                      letterSpacing: '0.05em',
+                      textTransform: 'uppercase',
+                      cursor: 'pointer',
+                      transition: 'background 0.18s',
+                    }}
+                  >
+                    {showAllPills ? '− Less' : `+ ${otherProjects.length - PILLS_INITIAL} More`}
+                  </button>
+                )}
+              </div>
+            </div>
           </div>
 
            {/* ── LEFT: Editorial content ── */}
@@ -190,7 +270,7 @@ export default function AboutSection() {
                 color: 'var(--primary)',
               }}
             >
-              Where Elite Living Meets<br />Exceptional Growth.
+              Where Luxury Meets Growth.
             </h2>
 
             <p
@@ -201,6 +281,46 @@ export default function AboutSection() {
               a layout — it's a canvas for your dreams. Designed for those who seek exclusivity,
               our NIT / NMRDA sanctioned plots offer unmatched value and lifestyle.
             </p>
+
+            {/* Nearby Locations */}
+            <div className="mb-10">
+              <p
+                style={{
+                  fontFamily: 'var(--font-heading)',
+                  fontSize: '0.75rem',
+                  fontWeight: 700,
+                  letterSpacing: '0.12em',
+                  color: 'var(--primary)',
+                  textTransform: 'uppercase',
+                  marginBottom: '12px',
+                }}
+              >
+                Nearby Connectivity & Landmarks
+              </p>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+                {['D-Mart', 'Samrudhi Circle', 'Orange City Logistic Park', 'Era International School Sumthana'].map((place) => (
+                  <span
+                    key={place}
+                    className="flex items-center gap-1.5"
+                    style={{
+                      padding: '6px 14px',
+                      borderRadius: '999px',
+                      border: '1px solid var(--secondary)',
+                      background: 'rgba(201, 134, 43, 0.08)',
+                      color: 'var(--primary)',
+                      fontFamily: 'var(--font-heading)',
+                      fontSize: '0.72rem',
+                      fontWeight: 700,
+                      letterSpacing: '0.05em',
+                      textTransform: 'uppercase',
+                    }}
+                  >
+                    <MapPin size={12} style={{ color: 'var(--secondary)' }} className="flex-shrink-0" />
+                    {place}
+                  </span>
+                ))}
+              </div>
+            </div>
 
             {/* Feature rows */}
             <div className="space-y-5">
@@ -233,6 +353,11 @@ export default function AboutSection() {
           </div>
         </div>
       </div>
+
+      {/* ── PROJECT POPUP ── */}
+      {selectedProject && (
+        <ProjectPopup project={selectedProject} onClose={() => setSelectedProject(null)} />
+      )}
     </section>
   );
 }

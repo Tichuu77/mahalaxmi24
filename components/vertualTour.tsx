@@ -36,7 +36,7 @@ export default function VirtualTourHero() {
               className="w-2 h-2 rounded-full inline-block"
               style={{ background: 'var(--secondary)', animation: 'pulseDot 1.8s ease-in-out infinite' }}
             />
-            Virtual Tour Available
+            Premium Gated Layout
           </span>
 
           <h2
@@ -55,19 +55,17 @@ export default function VirtualTourHero() {
             <p
               style={{ fontFamily: 'var(--font-sans)', color: 'rgba(255,255,255,0.82)', fontSize: '1.05rem', lineHeight: 1.75 }}
             >
-              Explore the project in detail from the comfort of your home. Experience the layout,
-              infrastructure planning, and key highlights through an immersive, interactive view.
+              Mahalaxmi Nagar 49 is a top-tier gated layout offering premium residential plots designed for a modern, secure lifestyle. With high-quality cement concrete roads, 24/7 security surveillance, lush green landscapes, and modern amenities, this community is the ideal canvas for your dream home.
             </p>
             <p
               style={{ fontFamily: 'var(--font-sans)', color: 'rgba(255,255,255,0.65)', fontSize: '0.95rem', lineHeight: 1.7 }}
             >
-              Ideal for outstation buyers and busy professionals looking to make informed decisions
-              with confidence.
+              Strategically located in Nagpur's premier residential zone with outstanding connectivity to Samrudhi Circle, D-Mart, and leading schools, it offers a perfect balance of serene living and high growth potential.
             </p>
           </div>
 
           {/* CTA */}
-          <a href="#faq_sec">
+          <a href="#overview">
             <button
               className="group inline-flex items-center gap-3 px-8 py-4 rounded-full font-bold uppercase tracking-widest text-sm transition-all duration-300 hover:shadow-2xl"
               style={{
@@ -85,7 +83,7 @@ export default function VirtualTourHero() {
                 (e.currentTarget as HTMLButtonElement).style.color = 'var(--secondary)';
               }}
             >
-              Book a Virtual Tour
+              Enquire Now
               <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-200" />
             </button>
           </a>

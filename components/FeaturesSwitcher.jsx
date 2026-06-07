@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 import React, { useState, useRef, useEffect } from 'react';
 
 const features = [
@@ -160,7 +160,7 @@ export default function FeaturesSection() {
               display: 'inline-block',
             }}
           />
-          Features
+          Modern Amenities
         </span>
 
         <span
