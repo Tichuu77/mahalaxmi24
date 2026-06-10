@@ -298,7 +298,7 @@ export default function AboutSection() {
                 Nearby Connectivity & Landmarks
               </p>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-                {['AIIMS', 'IIM', 'METRO STATION NCI',].map((place) => (
+                {['D-MART','SAMRUDHI CIRCLE','ORANGE CITY LOGISTIC PARK','ERA INTERNATIONAL SCHOOL SUMTHANA','AIIMS', 'IIM', 'METRO STATION NCI',].map((place) => (
                   <span
                     key={place}
                     className="flex items-center gap-1.5"
