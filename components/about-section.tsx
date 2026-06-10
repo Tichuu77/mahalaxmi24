@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 import React, { useState, useEffect } from 'react';
 import { Send, CheckCircle, AlertCircle, Shield, Leaf, Banknote, MapPin } from 'lucide-react';
 import { useRouter } from 'next/navigation';
@@ -298,7 +298,7 @@ export default function AboutSection() {
                 Nearby Connectivity & Landmarks
               </p>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-                {['D-Mart', 'Samrudhi Circle', 'Orange City Logistic Park', 'Era International School Sumthana'].map((place) => (
+                {['AIIMS', 'IIM', 'METRO STATION NCI',].map((place) => (
                   <span
                     key={place}
                     className="flex items-center gap-1.5"

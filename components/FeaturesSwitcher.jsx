@@ -1,41 +1,48 @@
-'use client';
+﻿'use client';
 import React, { useState, useRef, useEffect } from 'react';
 
 const features = [
-  // {
-  //   title: 'Master Layout Plan',
-  //   description:
-  //     'A meticulously planned township with wide internal roads, numbered plots, a central amenity zone, and a lush green belt — all visible at a glance from above.',
-  //   tab: 'Layout Plan',
-  //   image: '/gallery_4.jpg',
-  // },
   {
-    title: 'Garden Seating Lounge',
+    title: 'Kids Play Area',
     description:
-      'A landscaped outdoor lounge with a premium pergola, sculptural seating, and curated flower beds — the perfect spot to unwind within the gated community.',
-    tab: 'Garden Lounge',
-    image: '/gallery_1.jpg',
+      'A vibrant, safe play zone designed for children of all ages — featuring colorful slides, swings, climbing frames, and soft-surface flooring surrounded by shaded seating for parents.',
+    tab: 'Kids Play Area',
+    image: '/aminity1.jpeg',
   },
   {
-    title: 'Central Amenity Park',
+    title: 'Pool',
     description:
-      "An aerial view of the central recreational hub featuring a basketball court, children's play zone, walking trails, open lawns, and artistic sculptures.",
-    tab: 'Amenity Park',
-    image: '/gallery_2.jpg',
+      'A resort-style swimming pool with dedicated lanes, a shallow wading section for kids, and a sun deck with loungers — perfect for relaxation and recreation year-round.',
+    tab: 'Pool',
+    image: '/aminity2.jpeg',
   },
   {
-    title: 'Landscape & Green Spaces',
+    title: 'Basketball Court',
     description:
-      'Every plot is bordered by richly landscaped garden strips with seasonal flowers, manicured hedges, and palm-lined pathways creating a resort-like environment.',
-    tab: 'Green Spaces',
-    image: '/gallery_3.jpg',
+      'A full-sized, professionally marked basketball court with high-quality flooring and floodlights — ideal for evening matches, fitness drills, and friendly neighbourhood tournaments.',
+    tab: 'Basketball Court',
+    image: '/aminity3.jpeg',
   },
   {
-    title: "Children's Play Area",
+    title: 'Badminton Court',
     description:
-      'A dedicated play zone with colorful slides, swings, and benches — set against a lush lawn and canopy of jacaranda trees for a safe, joyful outdoor experience.',
-    tab: 'Play Area',
-    image: '/gallery_5.jpg',
+      'A covered, well-lit badminton court built to standard dimensions — offering residents a premium space for daily fitness, casual rallies, and competitive community play.',
+    tab: 'Badminton Court',
+    image: '/aminity4.jpeg',
+  },
+  {
+    title: 'Meditation Area',
+    description:
+      'A serene, dedicated meditation corner nestled amid lush greenery — designed with calming landscaping, natural stone seating, and peaceful water features to help you reconnect with inner stillness.',
+    tab: 'Meditation Area',
+    image: '/aminity5.jpeg',
+  },
+  {
+    title: 'Yoga Park',
+    description:
+      'An open-air yoga park with a smooth, spacious deck, morning sunlight, and a tranquil green backdrop — providing the perfect environment for daily practice, stretching, and mindful movement.',
+    tab: 'Yoga Park',
+    image: '/aminity6.jpeg',
   },
 ];
 
