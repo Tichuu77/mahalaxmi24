@@ -89,9 +89,103 @@ export default function AboutSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
         <div className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-start">
 
+          {/* ── LEFT: Editorial content (reordered) ── */}
+          <div className="scroll-fade">
+            {/* Nearby Locations - FIRST */}
+            <div className="mb-10">
+              <p
+                style={{
+                  fontFamily: 'var(--font-heading)',
+                  fontSize: '0.75rem',
+                  fontWeight: 700,
+                  letterSpacing: '0.12em',
+                  color: 'var(--primary)',
+                  textTransform: 'uppercase',
+                  marginBottom: '12px',
+                }}
+              >
+                Nearby Connectivity & Landmarks
+              </p>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+                {['D-MART','SAMRUDHI CIRCLE','ORANGE CITY LOGISTIC PARK','ERA INTERNATIONAL SCHOOL SUMTHANA','AIIMS', 'IIM', 'METRO STATION NCI',].map((place) => (
+                  <span
+                    key={place}
+                    className="flex items-center gap-1.5"
+                    style={{
+                      padding: '6px 14px',
+                      borderRadius: '999px',
+                      border: '1px solid var(--secondary)',
+                      background: 'rgba(201, 134, 43, 0.08)',
+                      color: 'var(--primary)',
+                      fontFamily: 'var(--font-heading)',
+                      fontSize: '0.72rem',
+                      fontWeight: 700,
+                      letterSpacing: '0.05em',
+                      textTransform: 'uppercase',
+                    }}
+                  >
+                    <MapPin size={12} style={{ color: 'var(--secondary)' }} className="flex-shrink-0" />
+                    {place}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Project Overview - SECOND */}
+            <span className="section-chip mb-5 block w-fit">Project Overview</span>
+
+            <h2
+              className="heading-underline mb-8 leading-tight"
+              style={{
+                fontFamily: 'var(--font-heading)',
+                fontSize: 'clamp(1.8rem, 4vw, 3rem)',
+                color: 'var(--primary)',
+              }}
+            >
+              Where Luxury Meets Growth.
+            </h2>
+
+            <p
+              className="mb-8 leading-relaxed"
+              style={{ fontFamily: 'var(--font-sans)', color: '#4a5568', fontSize: '1.05rem' }}
+            >
+              Experience the pinnacle of urban planning at Mahalaxmi Nagar 49. This isn't just
+              a layout — it's a canvas for your dreams. Designed for those who seek exclusivity,
+              our NIT / NMRDA sanctioned plots offer unmatched value and lifestyle.
+            </p>
+
+            {/* Feature rows */}
+            <div className="space-y-5">
+              {highlights.map(({ icon: Icon, title, desc }) => (
+                <div
+                  key={title}
+                  className="flex items-start gap-4 p-4 rounded-2xl transition-all hover:shadow-md"
+                  style={{ background: 'rgba(48,83,74,0.06)', border: '1px solid rgba(48,83,74,0.1)' }}
+                >
+                  <div
+                    className="flex-shrink-0 w-11 h-11 rounded-xl flex items-center justify-center"
+                    style={{ background: 'var(--primary)' }}
+                  >
+                    <Icon size={20} color="var(--secondary)" />
+                  </div>
+                  <div>
+                    <p
+                      className="font-bold mb-1"
+                      style={{ fontFamily: 'var(--font-heading)', fontSize: '0.92rem', color: 'var(--primary)' }}
+                    >
+                      {title}
+                    </p>
+                    <p style={{ fontFamily: 'var(--font-sans)', color: '#667', fontSize: '0.92rem' }}>
+                      {desc}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
          
 
-          {/* ── RIGHT: Glassmorphism inquiry form ── */}
+          {/* ── RIGHT: Glassmorphism inquiry form - THIRD ── */}
           <div className="scroll-fade-delay-1">
             <div
               className="relative rounded-3xl overflow-hidden shadow-2xl"
@@ -255,100 +349,6 @@ export default function AboutSection() {
                   </button>
                 )}
               </div>
-            </div>
-          </div>
-
-           {/* ── LEFT: Editorial content ── */}
-          <div className="scroll-fade">
-            <span className="section-chip mb-5 block w-fit">Project Overview</span>
-
-            <h2
-              className="heading-underline mb-8 leading-tight"
-              style={{
-                fontFamily: 'var(--font-heading)',
-                fontSize: 'clamp(1.8rem, 4vw, 3rem)',
-                color: 'var(--primary)',
-              }}
-            >
-              Where Luxury Meets Growth.
-            </h2>
-
-            <p
-              className="mb-8 leading-relaxed"
-              style={{ fontFamily: 'var(--font-sans)', color: '#4a5568', fontSize: '1.05rem' }}
-            >
-              Experience the pinnacle of urban planning at Mahalaxmi Nagar 49. This isn't just
-              a layout — it's a canvas for your dreams. Designed for those who seek exclusivity,
-              our NIT / NMRDA sanctioned plots offer unmatched value and lifestyle.
-            </p>
-
-            {/* Nearby Locations */}
-            <div className="mb-10">
-              <p
-                style={{
-                  fontFamily: 'var(--font-heading)',
-                  fontSize: '0.75rem',
-                  fontWeight: 700,
-                  letterSpacing: '0.12em',
-                  color: 'var(--primary)',
-                  textTransform: 'uppercase',
-                  marginBottom: '12px',
-                }}
-              >
-                Nearby Connectivity & Landmarks
-              </p>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-                {['D-MART','SAMRUDHI CIRCLE','ORANGE CITY LOGISTIC PARK','ERA INTERNATIONAL SCHOOL SUMTHANA','AIIMS', 'IIM', 'METRO STATION NCI',].map((place) => (
-                  <span
-                    key={place}
-                    className="flex items-center gap-1.5"
-                    style={{
-                      padding: '6px 14px',
-                      borderRadius: '999px',
-                      border: '1px solid var(--secondary)',
-                      background: 'rgba(201, 134, 43, 0.08)',
-                      color: 'var(--primary)',
-                      fontFamily: 'var(--font-heading)',
-                      fontSize: '0.72rem',
-                      fontWeight: 700,
-                      letterSpacing: '0.05em',
-                      textTransform: 'uppercase',
-                    }}
-                  >
-                    <MapPin size={12} style={{ color: 'var(--secondary)' }} className="flex-shrink-0" />
-                    {place}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {/* Feature rows */}
-            <div className="space-y-5">
-              {highlights.map(({ icon: Icon, title, desc }) => (
-                <div
-                  key={title}
-                  className="flex items-start gap-4 p-4 rounded-2xl transition-all hover:shadow-md"
-                  style={{ background: 'rgba(48,83,74,0.06)', border: '1px solid rgba(48,83,74,0.1)' }}
-                >
-                  <div
-                    className="flex-shrink-0 w-11 h-11 rounded-xl flex items-center justify-center"
-                    style={{ background: 'var(--primary)' }}
-                  >
-                    <Icon size={20} color="var(--secondary)" />
-                  </div>
-                  <div>
-                    <p
-                      className="font-bold mb-1"
-                      style={{ fontFamily: 'var(--font-heading)', fontSize: '0.92rem', color: 'var(--primary)' }}
-                    >
-                      {title}
-                    </p>
-                    <p style={{ fontFamily: 'var(--font-sans)', color: '#667', fontSize: '0.92rem' }}>
-                      {desc}
-                    </p>
-                  </div>
-                </div>
-              ))}
             </div>
           </div>
         </div>

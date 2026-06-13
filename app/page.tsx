@@ -10,6 +10,10 @@ import { Footer } from "@/components/footer"
 import FloatingCTA from "@/components/FloatingCTA"
 import FeaturesSwitcher from "@/components/FeaturesSwitcher"
 import VirtualTourHero from "@/components/vertualTour"
+import CompanyAboutSection from "@/components/company-about-section"
+import StatsSection from "@/components/stats-section"
+import OtherProjectsSection from "@/components/other-projects-section"
+import LocalAmenitiesSection from "@/components/local-amenities-section"
 
 
 export default function Home() {
@@ -17,10 +21,14 @@ export default function Home() {
   return (
     <main >
       <HeroSection />
-      <AboutSection />
-      <FeaturesSwitcher />
       <AmenitiesSection />
       <VirtualTourHero />
+      <FeaturesSwitcher />
+      <AboutSection />
+      <CompanyAboutSection />
+      <StatsSection />
+      <OtherProjectsSection />
+      <LocalAmenitiesSection />
       <TestimonialsSection />
       <MiniBlogsSection />
       <FAQSection />

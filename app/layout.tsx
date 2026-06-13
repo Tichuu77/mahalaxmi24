@@ -92,6 +92,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <meta name="google-site-verification" content="Hq6Ir-3afEKN0fOAhEheVXStOHHv4QP1JpcZblPklZg" />
         <link rel="icon" href="/Malaxmi-Final-Logo.-2png.png" />
         <title>Mahalaxmi Nagar 49 - Premium Residential Plots in Nagpur</title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
