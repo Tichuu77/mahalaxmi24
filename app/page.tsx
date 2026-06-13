@@ -22,11 +22,9 @@ export default function Home() {
       <HeroSection />
       <AmenitiesSection />
       <VirtualTourHero />
-      <FeaturesSwitcher />
       <AboutSection />
       <CompanyAboutSection />
       <StatsSection />
-      <OtherProjectsSection />
       <LocalAmenitiesSection />
       <TestimonialsSection />
       <MiniBlogsSection />

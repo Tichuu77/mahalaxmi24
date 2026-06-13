@@ -83,17 +83,13 @@ export default function VirtualTourHero() {
           {/* Text content */}
           <div
             className="relative w-full"
-            style={{
-              zIndex: 2,
-              minHeight: 'auto',
-              // Desktop: full 80vh feel
-            }}
+            style={{ zIndex: 2 }}
           >
             <div
               className="max-w-7xl mx-auto px-6 w-full"
               style={{ paddingTop: 'clamp(2rem, 5vw, 5rem)', paddingBottom: 'clamp(2rem, 5vw, 5rem)' }}
             >
-              {/* On desktop make it min 80vh centered */}
+              {/* Desktop */}
               <div
                 className="hidden md:flex items-center"
                 style={{ minHeight: '80vh' }}
@@ -103,7 +99,7 @@ export default function VirtualTourHero() {
                 </div>
               </div>
 
-              {/* Mobile content (no min-height constraint) */}
+              {/* Mobile */}
               <div className="block md:hidden max-w-2xl">
                 <BodyContent />
               </div>
@@ -116,7 +112,6 @@ export default function VirtualTourHero() {
   );
 }
 
-/* Shared content pulled out to avoid duplication */
 function BodyContent() {
   return (
     <>
@@ -129,7 +124,7 @@ function BodyContent() {
             animation: 'pulseDot 1.8s ease-in-out infinite',
           }}
         />
-        Premium Gated Layout
+        Premium Gated Society
       </span>
 
       <h2
@@ -141,7 +136,7 @@ function BodyContent() {
           textShadow: '0 2px 16px rgba(0,0,0,0.4)',
         }}
       >
-        Living Spaces in<br />Nagpur's Premier Area
+        Where Luxury<br />Meets Growth
       </h2>
 
       <div className="space-y-4 mb-10">
@@ -153,10 +148,10 @@ function BodyContent() {
             lineHeight: 1.75,
           }}
         >
-          Mahalaxmi Nagar 49 is a top-tier gated layout offering premium residential plots
-          designed for a modern, secure lifestyle. With high-quality cement concrete roads,
-          24/7 security surveillance, lush green landscapes, and modern amenities, this
-          community is the ideal canvas for your dream home.
+          Elevate your lifestyle at our premium gated community, specifically designed for those
+          who seek the perfect balance of sophistication and high-value returns. Located in the
+          heart of Nagpur's highest growth zone, this project offers an elite, secure, and modern
+          living experience away from the city's chaos.
         </p>
         <p
           style={{
@@ -166,9 +161,19 @@ function BodyContent() {
             lineHeight: 1.7,
           }}
         >
-          Strategically located in Nagpur's premier residential zone with outstanding
-          connectivity to Samrudhi Circle, D-Mart, and leading schools, it offers a
-          perfect balance of serene living and high growth potential.
+          By choosing to live here, you aren't just securing a home; you are investing in a future
+          where luxury meets consistent, exponential growth. Experience the pride of owning an
+          address that defines status and promises long-term appreciation.
+        </p>
+        <p
+          style={{
+            fontFamily: 'var(--font-sans)',
+            color: 'rgba(255,255,255,0.65)',
+            fontSize: '0.95rem',
+            lineHeight: 1.7,
+          }}
+        >
+          Give your family the upscale lifestyle they deserve and watch your investment soar! ✨
         </p>
       </div>
 

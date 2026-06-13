@@ -1,27 +1,70 @@
 'use client';
-import React, { useState, useEffect, useRef } from 'react';
-import {
-  ChevronLeft,
-  ChevronRight,
- 
-} from 'lucide-react';
+import React, { useState, useRef } from 'react';
 
-/* ── Image Showcase ────────────────────────────────────────── */
-const showcaseImages = [
-  { src: '/gallery_2.jpg', label: 'Central Amenity Park' },
-  { src: '/gallery_5.jpg', label: "Children's Play Area" },
-  { src: '/gallery_1.jpg', label: 'Garden Seating Lounge' },
-  { src: '/gallery_3.jpg', label: 'Landscape & Green Spaces' },
-  // { src: '/gallery_4.jpg', label: 'Master Layout Plan' },
-];
+/* ── All slides: features (image) + amenities (icon) ────────── */
+type Slide =
+  | { kind: 'feature'; title: string; description: string; tab: string; image: string }
+  | { kind: 'amenity'; title: string; description: string; tab: string; customIcon: React.ReactNode };
 
-/* ── Amenities with clear, understandable icons ─────────────── */
-const amenities = [
+const slides: Slide[] = [
+  /* ── Features ── */
   {
+    kind: 'feature',
+    title: 'Kids Play Area',
+    description:
+      'A vibrant, safe play zone designed for children of all ages — featuring colorful slides, swings, climbing frames, and soft-surface flooring surrounded by shaded seating for parents.',
+    tab: 'Kids Play Area',
+    image: '/aminity1.jpeg',
+  },
+  {
+    kind: 'feature',
+    title: 'Pool',
+    description:
+      'A resort-style swimming pool with dedicated lanes, a shallow wading section for kids, and a sun deck with loungers — perfect for relaxation and recreation year-round.',
+    tab: 'Pool',
+    image: '/aminity2.jpeg',
+  },
+  {
+    kind: 'feature',
+    title: 'Basketball Court',
+    description:
+      'A full-sized, professionally marked basketball court with high-quality flooring and floodlights — ideal for evening matches, fitness drills, and friendly neighbourhood tournaments.',
+    tab: 'Basketball Court',
+    image: '/aminity3.jpeg',
+  },
+  {
+    kind: 'feature',
+    title: 'Badminton Court',
+    description:
+      'A covered, well-lit badminton court built to standard dimensions — offering residents a premium space for daily fitness, casual rallies, and competitive community play.',
+    tab: 'Badminton Court',
+    image: '/aminity4.jpeg',
+  },
+  {
+    kind: 'feature',
+    title: 'Meditation Area',
+    description:
+      'A serene, dedicated meditation corner nestled amid lush greenery — designed with calming landscaping, natural stone seating, and peaceful water features.',
+    tab: 'Meditation Area',
+    image: '/aminity5.jpeg',
+  },
+  {
+    kind: 'feature',
+    title: 'Yoga Park',
+    description:
+      'An open-air yoga park with a smooth, spacious deck, morning sunlight, and a tranquil green backdrop — providing the perfect environment for daily practice.',
+    tab: 'Yoga Park',
+    image: '/aminity6.jpeg',
+  },
+
+  /* ── Amenities ── */
+  {
+    kind: 'amenity',
     title: 'Internal Cement Concrete Road',
-    desc: 'A paved road within the premises connecting all major parts.',
+    description: 'A paved road within the premises connecting all major parts.',
+    tab: 'CC Road',
     customIcon: (
-      <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-10 h-10">
+      <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-16 h-16">
         <polygon stroke="#C9862b" strokeWidth="1.5" strokeLinejoin="round" fill="#C9862b" fillOpacity="0.08" points="10,44 20,12 36,12 46,44"/>
         <line x1="28" y1="12" x2="28" y2="44" stroke="#C9862b" strokeWidth="1.5"/>
         <line x1="28" y1="15" x2="28" y2="20" stroke="#C9862b" strokeWidth="1.5" strokeDasharray="2,3"/>
@@ -31,10 +74,12 @@ const amenities = [
     ),
   },
   {
+    kind: 'amenity',
     title: 'Sewage Line',
-    desc: 'Underground waste disposal system in layout.',
+    description: 'Underground waste disposal system in layout.',
+    tab: 'Sewage Line',
     customIcon: (
-      <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-10 h-10">
+      <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-16 h-16">
         <line x1="4" y1="22" x2="52" y2="22" stroke="#C9862b" strokeWidth="1.5" strokeDasharray="3,2"/>
         <rect x="6" y="28" width="44" height="10" rx="5" stroke="#C9862b" strokeWidth="1.5"/>
         <line x1="14" y1="33" x2="24" y2="33" stroke="#C9862b" strokeWidth="1.5" strokeLinecap="round"/>
@@ -46,10 +91,12 @@ const amenities = [
     ),
   },
   {
+    kind: 'amenity',
     title: 'Electric Network With Transformer',
-    desc: 'Electricity distribution infrastructure for plots and amenities.',
+    description: 'Electricity distribution infrastructure for plots and amenities.',
+    tab: 'Electric',
     customIcon: (
-      <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-10 h-10">
+      <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-16 h-16">
         <line x1="28" y1="8" x2="28" y2="46" stroke="#C9862b" strokeWidth="1.5" strokeLinecap="round"/>
         <line x1="14" y1="16" x2="42" y2="16" stroke="#C9862b" strokeWidth="1.5" strokeLinecap="round"/>
         <path d="M14,16 Q8,22 4,22" stroke="#C9862b" strokeWidth="1.5" strokeLinecap="round"/>
@@ -60,10 +107,12 @@ const amenities = [
     ),
   },
   {
+    kind: 'amenity',
     title: 'Kids Park',
-    desc: 'A playground for children in layout.',
+    description: 'A playground for children in layout.',
+    tab: 'Kids Park',
     customIcon: (
-      <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-10 h-10">
+      <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-16 h-16">
         <line x1="12" y1="10" x2="12" y2="44" stroke="#C9862b" strokeWidth="1.5" strokeLinecap="round"/>
         <line x1="12" y1="10" x2="30" y2="10" stroke="#C9862b" strokeWidth="1.5" strokeLinecap="round"/>
         <path d="M30,10 L44,40" stroke="#C9862b" strokeWidth="1.5" strokeLinecap="round"/>
@@ -77,10 +126,12 @@ const amenities = [
     ),
   },
   {
+    kind: 'amenity',
     title: 'Garden',
-    desc: 'Landscaped green space with plantation for better experience.',
+    description: 'Landscaped green space with plantation for better experience.',
+    tab: 'Garden',
     customIcon: (
-      <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-10 h-10">
+      <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-16 h-16">
         <circle cx="18" cy="20" r="10" stroke="#C9862b" strokeWidth="1.5"/>
         <line x1="18" y1="30" x2="18" y2="44" stroke="#C9862b" strokeWidth="1.5" strokeLinecap="round"/>
         <circle cx="38" cy="26" r="7" stroke="#C9862b" strokeWidth="1.5"/>
@@ -92,10 +143,12 @@ const amenities = [
     ),
   },
   {
+    kind: 'amenity',
     title: 'Storm Water Drainage',
-    desc: 'Efficient stormwater management system across the entire layout.',
+    description: 'Efficient stormwater management system across the entire layout.',
+    tab: 'Drainage',
     customIcon: (
-      <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-10 h-10">
+      <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-16 h-16">
         <path d="M12,26 Q12,16 20,16 Q22,10 30,12 Q38,12 38,20 Q42,20 42,26 Q42,30 38,30 L12,30 Q8,30 8,26 Q8,22 12,26Z" stroke="#C9862b" strokeWidth="1.5" strokeLinejoin="round"/>
         <line x1="16" y1="33" x2="14" y2="39" stroke="#C9862b" strokeWidth="1.5" strokeLinecap="round"/>
         <line x1="25" y1="33" x2="23" y2="39" stroke="#C9862b" strokeWidth="1.5" strokeLinecap="round"/>
@@ -108,10 +161,12 @@ const amenities = [
     ),
   },
   {
+    kind: 'amenity',
     title: 'Open Space Public Utility',
-    desc: 'An open-use area available to all the residents in the layout.',
+    description: 'An open-use area available to all the residents in the layout.',
+    tab: 'Public Utility',
     customIcon: (
-      <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-10 h-10">
+      <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-16 h-16">
         <rect x="8" y="30" width="40" height="4" rx="2" stroke="#C9862b" strokeWidth="1.5"/>
         <line x1="14" y1="34" x2="14" y2="42" stroke="#C9862b" strokeWidth="1.5" strokeLinecap="round"/>
         <line x1="42" y1="34" x2="42" y2="42" stroke="#C9862b" strokeWidth="1.5" strokeLinecap="round"/>
@@ -125,10 +180,12 @@ const amenities = [
     ),
   },
   {
+    kind: 'amenity',
     title: 'Sewage Treatment Plant',
-    desc: 'A dedicated sewage treatment plant for effective wastewater management.',
+    description: 'A dedicated sewage treatment plant for effective wastewater management.',
+    tab: 'STP',
     customIcon: (
-      <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-10 h-10">
+      <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-16 h-16">
         <rect x="4" y="20" width="18" height="22" rx="3" stroke="#C9862b" strokeWidth="1.5"/>
         <rect x="34" y="20" width="18" height="22" rx="3" stroke="#C9862b" strokeWidth="1.5"/>
         <path d="M6,28 Q9,25 13,28 Q17,31 20,28" stroke="#C9862b" strokeWidth="1.5" strokeLinecap="round"/>
@@ -142,10 +199,12 @@ const amenities = [
     ),
   },
   {
+    kind: 'amenity',
     title: 'Open Space Compound Wall',
-    desc: 'Fenced open area boundary to the space provided.',
+    description: 'Fenced open area boundary to the space provided.',
+    tab: 'Compound Wall',
     customIcon: (
-      <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-10 h-10">
+      <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-16 h-16">
         <rect x="4" y="36" width="48" height="8" rx="2" stroke="#C9862b" strokeWidth="1.5"/>
         <line x1="28" y1="36" x2="28" y2="44" stroke="#C9862b" strokeWidth="1.5"/>
         <line x1="16" y1="36" x2="16" y2="44" stroke="#C9862b" strokeWidth="1.5"/>
@@ -164,10 +223,12 @@ const amenities = [
     ),
   },
   {
+    kind: 'amenity',
     title: 'Meditation Centre',
-    desc: 'Dedicated space for contemplation and relaxation.',
+    description: 'Dedicated space for contemplation and relaxation.',
+    tab: 'Meditation',
     customIcon: (
-      <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-10 h-10">
+      <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-16 h-16">
         <circle cx="28" cy="10" r="4" stroke="#C9862b" strokeWidth="1.5"/>
         <line x1="28" y1="14" x2="28" y2="26" stroke="#C9862b" strokeWidth="1.5" strokeLinecap="round"/>
         <path d="M28,19 Q20,22 16,26" stroke="#C9862b" strokeWidth="1.5" strokeLinecap="round"/>
@@ -181,155 +242,361 @@ const amenities = [
   },
 ];
 
-/* ── Component ─────────────────────────────────────────────── */
-export default function LuxuryAmenities() {
-  const [activeImg, setActiveImg] = useState(0);
-  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+function pad(n: number) {
+  return String(n).padStart(2, '0');
+}
 
-  const resetTimer = () => {
-    if (timerRef.current) clearInterval(timerRef.current);
-    timerRef.current = setInterval(() => {
-      setActiveImg((p) => (p + 1) % showcaseImages.length);
-    }, 4000);
+/* ── Component ─────────────────────────────────────────────── */
+export default function FeaturesSection() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [animKey, setAnimKey] = useState(0);
+
+  const touchStartX = useRef(0);
+  const touchStartY = useRef(0);
+  const tabStripRef = useRef<HTMLDivElement>(null);
+  const isAnimating = useRef(false);
+
+  const active = slides[activeIndex];
+
+  const goTo = (index: number) => {
+    if (index === activeIndex || isAnimating.current) return;
+    if (index < 0 || index >= slides.length) return;
+    isAnimating.current = true;
+    setActiveIndex(index);
+    setAnimKey((k) => k + 1);
+    // scroll the tab into view
+    setTimeout(() => {
+      const strip = tabStripRef.current;
+      if (strip) {
+        const btn = strip.children[index] as HTMLElement;
+        if (btn) btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      }
+      isAnimating.current = false;
+    }, 100);
   };
 
-  useEffect(() => {
-    resetTimer();
-    return () => {
-      if (timerRef.current) clearInterval(timerRef.current);
-    };
-  }, []);
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+    touchStartY.current = e.touches[0].clientY;
+  };
 
-  const go = (dir: 'prev' | 'next') => {
-    setActiveImg((p) =>
-      dir === 'prev'
-        ? (p === 0 ? showcaseImages.length - 1 : p - 1)
-        : (p + 1) % showcaseImages.length
-    );
-    resetTimer();
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    const dx = e.changedTouches[0].clientX - touchStartX.current;
+    const dy = e.changedTouches[0].clientY - touchStartY.current;
+    if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) {
+      if (dx < 0) goTo(activeIndex + 1);
+      else goTo(activeIndex - 1);
+    }
   };
 
   return (
     <section
       id="amenities"
-      className="py-20 md:py-28"
-      style={{ background: '#f9f7f4' }}
+      className="relative flex flex-col overflow-hidden"
+      style={{ background: '#0d1a14', height: '100dvh' }}
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10 scroll-fade">
-          <div>
-            <span className="section-chip mb-3 block w-fit">World-Class Amenities</span>
-            <h2
-              className="leading-tight"
-              style={{
-                fontFamily: 'var(--font-heading)',
-                fontSize: 'clamp(1.8rem, 4vw, 2.8rem)',
-                color: 'var(--primary)',
-              }}
-            >
-              Amenities that Enhance Your{' '}
-              <span style={{ color: 'var(--secondary)', fontStyle: 'italic' }}>
-                Lifestyle
-              </span>
-            </h2>
-          </div>
-        </div>
+      {/* ── VISUAL BLOCK (top 52%) ── */}
+      <div style={{ position: 'relative', width: '100%', flex: '0 0 52%', overflow: 'hidden' }}>
 
-        {/* Showcase */}
-        <div className="relative rounded-3xl overflow-hidden mb-14 scroll-fade" style={{ height: 'clamp(240px, 50vw, 480px)' }}>
-          {showcaseImages.map((img, i) => (
+        {/* Feature slides — image */}
+        {slides.map((slide, i) =>
+          slide.kind === 'feature' ? (
             <div
               key={i}
-              className="absolute inset-0 transition-opacity duration-700"
+              aria-hidden={i !== activeIndex}
               style={{
-                opacity: i === activeImg ? 1 : 0,
-                zIndex: i === activeImg ? 1 : 0,
+                position: 'absolute',
+                inset: 0,
+                backgroundImage: `url(${slide.image})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                opacity: i === activeIndex ? 1 : 0,
+                transition: 'opacity 0.65s ease',
+              }}
+            />
+          ) : null
+        )}
+
+        {/* Amenity slides — dark panel with large icon */}
+        {slides.map((slide, i) =>
+          slide.kind === 'amenity' ? (
+            <div
+              key={i}
+              aria-hidden={i !== activeIndex}
+              style={{
+                position: 'absolute',
+                inset: 0,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                opacity: i === activeIndex ? 1 : 0,
+                transition: 'opacity 0.65s ease',
+                background: 'radial-gradient(ellipse at center, rgba(201,134,43,0.10) 0%, transparent 70%)',
               }}
             >
-              <img src={img.src} alt={img.label} className="w-full h-full object-cover" />
+              {/* Large centered icon */}
+              <div
+                style={{
+                  width: '140px',
+                  height: '140px',
+                  borderRadius: '28px',
+                  background: 'rgba(201,134,43,0.10)',
+                  border: '1px solid rgba(201,134,43,0.25)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  backdropFilter: 'blur(8px)',
+                }}
+              >
+                <div style={{ transform: 'scale(2.2)', transformOrigin: 'center' }}>
+                  {slide.customIcon}
+                </div>
+              </div>
             </div>
-          ))}
+          ) : null
+        )}
 
-          {/* Overlay */}
-          <div
-            className="absolute inset-0"
+        {/* Top bar */}
+        <div
+          style={{
+            position: 'absolute',
+            top: 0, left: 0, right: 0,
+            zIndex: 5,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            padding: '14px 16px',
+            background: 'linear-gradient(to bottom, rgba(8,24,16,0.65) 0%, transparent 100%)',
+          }}
+        >
+          <span
             style={{
-              background: 'linear-gradient(to bottom, transparent 50%, rgba(8,24,16,0.75) 100%)',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '6px',
+              background: 'rgba(255,255,255,0.12)',
+              border: '1px solid rgba(255,255,255,0.22)',
+              backdropFilter: 'blur(12px)',
+              WebkitBackdropFilter: 'blur(12px)',
+              borderRadius: '100px',
+              padding: '5px 14px',
+              fontSize: '10px',
+              fontWeight: 700,
+              letterSpacing: '0.12em',
+              textTransform: 'uppercase',
+              color: 'rgba(255,255,255,0.88)',
+              fontFamily: 'var(--font-sans, sans-serif)',
             }}
-          />
-
-          {/* Label */}
-          <div className="absolute bottom-5 left-6 z-10" key={activeImg}>
+          >
             <span
-              className="px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest"
               style={{
-                background: 'var(--secondary)',
-                color: '#fff',
+                width: '5px',
+                height: '5px',
+                borderRadius: '50%',
+                background: 'var(--secondary, #C9862B)',
+                display: 'inline-block',
               }}
-            >
-              {showcaseImages[activeImg].label}
-            </span>
+            />
+            {active.kind === 'feature' ? 'Modern Amenities' : 'World-Class Amenities'}
+          </span>
+
+          <span
+            style={{
+              background: 'rgba(0,0,0,0.3)',
+              border: '1px solid rgba(255,255,255,0.12)',
+              backdropFilter: 'blur(8px)',
+              WebkitBackdropFilter: 'blur(8px)',
+              borderRadius: '100px',
+              padding: '5px 14px',
+              fontSize: '11px',
+              fontWeight: 600,
+              color: 'rgba(255,255,255,0.7)',
+              letterSpacing: '0.05em',
+              fontFamily: 'var(--font-sans, sans-serif)',
+            }}
+          >
+            <strong style={{ color: 'var(--secondary, #C9862B)', fontWeight: 700 }}>
+              {pad(activeIndex + 1)}
+            </strong>{' '}
+            / {pad(slides.length)}
+          </span>
+        </div>
+
+        {/* Bottom fade */}
+        <div
+          aria-hidden="true"
+          style={{
+            position: 'absolute',
+            bottom: 0, left: 0, right: 0,
+            height: '80px',
+            background: 'linear-gradient(to bottom, transparent 0%, #0d1a14 100%)',
+            zIndex: 4,
+          }}
+        />
+      </div>
+
+      {/* ── CONTENT BLOCK (bottom) ── */}
+      <div
+        style={{
+          flex: 1,
+          display: 'flex',
+          flexDirection: 'column',
+          background: '#0d1a14',
+          overflow: 'hidden',
+        }}
+      >
+        {/* Section heading */}
+        <div style={{ padding: '4px 20px 0' }}>
+          <h2
+            style={{
+              fontFamily: 'var(--font-heading, Georgia, serif)',
+              fontSize: 'clamp(1.15rem, 5vw, 2rem)',
+              fontWeight: 700,
+              color: '#fff',
+              letterSpacing: '-0.01em',
+              lineHeight: 1.2,
+              margin: 0,
+            }}
+          >
+            Life at Mahalaxmi<br />Nagar 49
+          </h2>
+        </div>
+
+        {/* Animated content card */}
+        <div
+          key={animKey}
+          style={{
+            padding: '10px 20px 0',
+            animation: 'fadeInUp 0.45s ease both',
+          }}
+        >
+          <div
+            style={{
+              display: 'inline-block',
+              background: 'var(--secondary, #C9862B)',
+              color: '#fff',
+              fontSize: '9px',
+              fontWeight: 800,
+              letterSpacing: '0.18em',
+              textTransform: 'uppercase',
+              padding: '4px 10px',
+              borderRadius: '4px',
+              marginBottom: '8px',
+              fontFamily: 'var(--font-sans, sans-serif)',
+            }}
+          >
+            {pad(activeIndex + 1)} / {pad(slides.length)}
           </div>
 
-          {/* Dots */}
-          <div className="absolute bottom-5 right-5 flex gap-2 z-10">
-            {showcaseImages.map((_, i) => (
+          <h3
+            style={{
+              fontFamily: 'var(--font-heading, Georgia, serif)',
+              fontSize: 'clamp(1rem, 4vw, 1.4rem)',
+              fontWeight: 700,
+              color: '#fff',
+              lineHeight: 1.25,
+              marginBottom: '6px',
+              letterSpacing: '-0.01em',
+            }}
+          >
+            {active.title}
+          </h3>
+
+          <p
+            style={{
+              fontSize: '12.5px',
+              lineHeight: 1.65,
+              color: 'rgba(255,255,255,0.65)',
+              fontFamily: 'var(--font-sans, sans-serif)',
+              display: '-webkit-box',
+              WebkitLineClamp: 3,
+              WebkitBoxOrient: 'vertical',
+              overflow: 'hidden',
+              margin: 0,
+            }}
+          >
+            {active.description}
+          </p>
+        </div>
+
+        <div style={{ flex: 1 }} />
+
+        {/* Tab strip — all slides */}
+        <div
+          ref={tabStripRef}
+          style={{
+            display: 'flex',
+            gap: '8px',
+            overflowX: 'auto',
+            scrollbarWidth: 'none',
+            WebkitOverflowScrolling: 'touch',
+            padding: '8px 20px',
+            paddingBottom: 'max(calc(env(safe-area-inset-bottom) + 12px), 16px)',
+          }}
+        >
+          {slides.map((slide, i) => {
+            const isActive = i === activeIndex;
+            const isAmenity = slide.kind === 'amenity';
+            return (
               <button
                 key={i}
-                onClick={() => {
-                  setActiveImg(i);
-                  resetTimer();
-                }}
-                className="rounded-full transition-all"
+                onClick={() => goTo(i)}
                 style={{
-                  width: i === activeImg ? '24px' : '8px',
-                  height: '8px',
-                  background: i === activeImg
-                    ? 'var(--secondary)'
-                    : 'rgba(255,255,255,0.5)',
+                  flexShrink: 0,
+                  minWidth: '90px',
+                  maxWidth: '130px',
+                  background: isActive
+                    ? 'var(--secondary, #C9862B)'
+                    : isAmenity
+                    ? 'rgba(201,134,43,0.07)'
+                    : 'rgba(255,255,255,0.07)',
+                  border: `1px solid ${
+                    isActive
+                      ? 'var(--secondary, #C9862B)'
+                      : isAmenity
+                      ? 'rgba(201,134,43,0.18)'
+                      : 'rgba(255,255,255,0.1)'
+                  }`,
+                  backdropFilter: 'blur(8px)',
+                  WebkitBackdropFilter: 'blur(8px)',
+                  borderRadius: '12px',
+                  padding: '10px 14px',
+                  textAlign: 'left',
+                  cursor: 'pointer',
+                  boxShadow: isActive ? '0 6px 20px rgba(201,134,43,0.35)' : 'none',
+                  transform: isActive ? 'translateY(-2px)' : 'none',
+                  transition: 'all 0.28s ease',
                 }}
-              />
-            ))}
-          </div>
-
-          {/* Arrows */}
-          <button onClick={() => go('prev')} className="nav-btn left-4">
-            <ChevronLeft size={20} />
-          </button>
-          <button onClick={() => go('next')} className="nav-btn right-4">
-            <ChevronRight size={20} />
-          </button>
+              >
+                <span
+                  style={{
+                    fontSize: '9.5px',
+                    fontWeight: 700,
+                    letterSpacing: '0.08em',
+                    textTransform: 'uppercase',
+                    color: isActive ? '#fff' : 'rgba(255,255,255,0.55)',
+                    fontFamily: 'var(--font-sans, sans-serif)',
+                    lineHeight: 1.3,
+                    display: 'block',
+                  }}
+                >
+                  {slide.tab}
+                </span>
+              </button>
+            );
+          })}
         </div>
-
-        {/* Amenities Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {amenities.map((amenity, index) => (
-            <AmenityRow key={index} amenity={amenity} />
-          ))}
-        </div>
-
       </div>
+
+      <style>{`
+        @keyframes fadeInUp {
+          from { opacity: 0; transform: translateY(14px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+      `}</style>
     </section>
-  );
-}
-
-/* ── Row ───────────────────────────────────────────── */
-function AmenityRow({
-  amenity,
-}: {
-  amenity: { title: string; desc: string; customIcon: React.ReactNode };
-}) {
-  return (
-    <div className="group flex items-start gap-4 p-5 rounded-2xl bg-white border transition-all hover:shadow-lg hover:-translate-y-0.5">
-      <div className=" w-20 h-20 flex items-center justify-center rounded-xl bg-[#30534A]/10">
-        {amenity.customIcon}
-      </div>
-      <div>
-        <h3 className="font-bold text-sm text-[var(--primary)] mb-1">{amenity.title}</h3>
-        <p className="text-xs text-gray-500 leading-relaxed">{amenity.desc}</p>
-      </div>
-    </div>
   );
 }
