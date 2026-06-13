@@ -6,7 +6,6 @@ import { usePopup } from './popup-context';
 const navLinks = [
   { name: 'Overview', href: '#overview' },
   { name: 'Amenities', href: '#amenities' },
-  { name: 'Gallery', href: '#gallery' },
   { name: 'Testimonials', href: '#testimonials' },
   { name: 'FAQ', href: '#faq_sec' },
 ];

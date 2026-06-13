@@ -65,9 +65,8 @@ export function Footer() {
               {[
                 { href: '#overview',     label: 'About' },
                 { href: '#amenities',    label: 'Amenities' },
-                { href: '#gallery',      label: 'Gallery' },
                 { href: '#testimonials', label: 'Testimonials' },
-                { href: '#faq_sec',      label: 'Contact' },
+                { href: '#faq_sec',      label: 'FAQ' },
               ].map((link) => (
                 <li key={link.href}>
                   <a
@@ -85,38 +84,7 @@ export function Footer() {
               ))}
             </ul>
           </div>
-
-          {/* Resources */}
-          <div>
-            <h4
-              className="font-bold text-sm uppercase tracking-widest mb-5"
-              style={{ fontFamily: 'var(--font-heading)', color: 'var(--secondary)' }}
-            >
-              Resources
-            </h4>
-            <ul className="space-y-3">
-              {[
-                { href: '#faq_sec',   label: 'FAQ' },
-                { href: '#documents', label: 'Brochure' },
-                { href: '#faq_sec',   label: 'Site Visit' },
-              ].map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="text-sm transition-all hover:text-white flex items-center gap-2 group"
-                    style={{ color: 'rgba(255,255,255,0.6)', fontFamily: 'var(--font-sans)' }}
-                  >
-                    <span
-                      className="w-1.5 h-1.5 rounded-full flex-shrink-0 group-hover:bg-amber-400 transition-colors"
-                      style={{ background: 'rgba(201,134,43,0.5)' }}
-                    />
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
+ 
           {/* Contact */}
           <div>
             <h4
