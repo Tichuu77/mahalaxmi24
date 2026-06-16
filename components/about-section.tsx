@@ -131,7 +131,7 @@ export default function AboutSection() {
               </div>
             </div>
 
-            {/* Project Overview - SECOND */}
+            {/* Project Overview - SECOND
             <span className="section-chip mb-5 block w-fit">Project Overview</span>
 
             <h2
@@ -152,7 +152,7 @@ export default function AboutSection() {
               Experience the pinnacle of urban planning at Mahalaxmi Nagar 49. This isn't just
               a layout — it's a canvas for your dreams. Designed for those who seek exclusivity,
               our NIT / NMRDA sanctioned plots offer unmatched value and lifestyle.
-            </p>
+            </p> */}
 
             {/* Feature rows */}
             <div className="space-y-5">

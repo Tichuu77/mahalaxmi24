@@ -7,238 +7,61 @@ type Slide =
   | { kind: 'amenity'; title: string; description: string; tab: string; customIcon: React.ReactNode };
 
 const slides: Slide[] = [
-  /* ── Features ── */
   {
     kind: 'feature',
-    title: 'Kids Play Area',
+    title: 'Gym',
     description:
-      'A vibrant, safe play zone designed for children of all ages — featuring colorful slides, swings, climbing frames, and soft-surface flooring surrounded by shaded seating for parents.',
-    tab: 'Kids Play Area',
-    image: '/aminity1.jpeg',
-  },
-  {
-    kind: 'feature',
-    title: 'Pool',
-    description:
-      'A resort-style swimming pool with dedicated lanes, a shallow wading section for kids, and a sun deck with loungers — perfect for relaxation and recreation year-round.',
-    tab: 'Pool',
-    image: '/aminity2.jpeg',
+      'A fully equipped modern fitness center featuring premium cardio machines, strength-training equipment, free weights, and dedicated workout zones to help residents maintain a healthy and active lifestyle.',
+    tab: 'Gym',
+    image: '/gym.jpg',
   },
   {
     kind: 'feature',
-    title: 'Basketball Court',
+    title: 'Amphitheater',
     description:
-      'A full-sized, professionally marked basketball court with high-quality flooring and floodlights — ideal for evening matches, fitness drills, and friendly neighbourhood tournaments.',
-    tab: 'Basketball Court',
-    image: '/aminity3.jpeg',
+      'An open-air amphitheater designed for community gatherings, cultural events, performances, movie nights, and celebrations, offering comfortable seating in a vibrant outdoor setting.',
+    tab: 'Amphitheater',
+    image: '/amphitheater.jpeg',
   },
   {
     kind: 'feature',
-    title: 'Badminton Court',
+    title: 'Sports Turf',
     description:
-      'A covered, well-lit badminton court built to standard dimensions — offering residents a premium space for daily fitness, casual rallies, and competitive community play.',
-    tab: 'Badminton Court',
-    image: '/aminity4.jpeg',
+      'A professionally maintained multi-purpose sports turf ideal for football, cricket, fitness activities, and recreational games, providing residents with an active and energetic environment.',
+    tab: 'Turf',
+    image: '/turf.jpeg',
   },
   {
     kind: 'feature',
-    title: 'Meditation Area',
+    title: 'Open Party Lawn',
     description:
-      'A serene, dedicated meditation corner nestled amid lush greenery — designed with calming landscaping, natural stone seating, and peaceful water features.',
-    tab: 'Meditation Area',
-    image: '/aminity5.jpeg',
+      'A beautifully landscaped open party lawn perfect for social gatherings, family functions, celebrations, and outdoor events, offering ample space amidst lush green surroundings.',
+    tab: 'Party Lawn',
+    image: '/open-party-lawn.jpeg',
   },
   {
     kind: 'feature',
-    title: 'Yoga Park',
+    title: 'Zumba Room',
     description:
-      'An open-air yoga park with a smooth, spacious deck, morning sunlight, and a tranquil green backdrop — providing the perfect environment for daily practice.',
-    tab: 'Yoga Park',
-    image: '/aminity6.jpeg',
-  },
-
-  /* ── Amenities ── */
-  {
-    kind: 'amenity',
-    title: 'Internal Cement Concrete Road',
-    description: 'A paved road within the premises connecting all major parts.',
-    tab: 'CC Road',
-    customIcon: (
-      <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-16 h-16">
-        <polygon stroke="#C9862b" strokeWidth="1.5" strokeLinejoin="round" fill="#C9862b" fillOpacity="0.08" points="10,44 20,12 36,12 46,44"/>
-        <line x1="28" y1="12" x2="28" y2="44" stroke="#C9862b" strokeWidth="1.5"/>
-        <line x1="28" y1="15" x2="28" y2="20" stroke="#C9862b" strokeWidth="1.5" strokeDasharray="2,3"/>
-        <line x1="28" y1="24" x2="28" y2="29" stroke="#C9862b" strokeWidth="1.5" strokeDasharray="2,3"/>
-        <line x1="28" y1="33" x2="28" y2="38" stroke="#C9862b" strokeWidth="1.5" strokeDasharray="2,3"/>
-      </svg>
-    ),
+      'A spacious and energetic Zumba and dance studio with modern flooring, mirrors, sound systems, and ample ventilation, creating the ideal atmosphere for fitness and group workouts.',
+    tab: 'Zumba Room',
+    image: '/zumba-room.jpeg',
   },
   {
-    kind: 'amenity',
-    title: 'Sewage Line',
-    description: 'Underground waste disposal system in layout.',
-    tab: 'Sewage Line',
-    customIcon: (
-      <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-16 h-16">
-        <line x1="4" y1="22" x2="52" y2="22" stroke="#C9862b" strokeWidth="1.5" strokeDasharray="3,2"/>
-        <rect x="6" y="28" width="44" height="10" rx="5" stroke="#C9862b" strokeWidth="1.5"/>
-        <line x1="14" y1="33" x2="24" y2="33" stroke="#C9862b" strokeWidth="1.5" strokeLinecap="round"/>
-        <polyline points="21,30 24,33 21,36" stroke="#C9862b" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-        <line x1="30" y1="33" x2="40" y2="33" stroke="#C9862b" strokeWidth="1.5" strokeLinecap="round"/>
-        <polyline points="37,30 40,33 37,36" stroke="#C9862b" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-        <ellipse cx="28" cy="22" rx="6" ry="2.5" stroke="#C9862b" strokeWidth="1.5"/>
-      </svg>
-    ),
+    kind: 'feature',
+    title: 'Gazebo',
+    description:
+      'A charming gazebo surrounded by landscaped gardens, providing a peaceful retreat for relaxation, casual conversations, reading, or enjoying serene outdoor moments with family and friends.',
+    tab: 'Gazebo',
+    image: '/gazebo.jpeg',
   },
   {
-    kind: 'amenity',
-    title: 'Electric Network With Transformer',
-    description: 'Electricity distribution infrastructure for plots and amenities.',
-    tab: 'Electric',
-    customIcon: (
-      <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-16 h-16">
-        <line x1="28" y1="8" x2="28" y2="46" stroke="#C9862b" strokeWidth="1.5" strokeLinecap="round"/>
-        <line x1="14" y1="16" x2="42" y2="16" stroke="#C9862b" strokeWidth="1.5" strokeLinecap="round"/>
-        <path d="M14,16 Q8,22 4,22" stroke="#C9862b" strokeWidth="1.5" strokeLinecap="round"/>
-        <path d="M42,16 Q48,22 52,22" stroke="#C9862b" strokeWidth="1.5" strokeLinecap="round"/>
-        <rect x="22" y="26" width="12" height="10" rx="2" stroke="#C9862b" strokeWidth="1.5"/>
-        <polygon points="29,27.5 26.5,31.5 29,31.5 27,35.5 30.5,30 28,30" fill="#C9862b"/>
-      </svg>
-    ),
-  },
-  {
-    kind: 'amenity',
-    title: 'Kids Park',
-    description: 'A playground for children in layout.',
-    tab: 'Kids Park',
-    customIcon: (
-      <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-16 h-16">
-        <line x1="12" y1="10" x2="12" y2="44" stroke="#C9862b" strokeWidth="1.5" strokeLinecap="round"/>
-        <line x1="12" y1="10" x2="30" y2="10" stroke="#C9862b" strokeWidth="1.5" strokeLinecap="round"/>
-        <path d="M30,10 L44,40" stroke="#C9862b" strokeWidth="1.5" strokeLinecap="round"/>
-        <line x1="4" y1="44" x2="52" y2="44" stroke="#C9862b" strokeWidth="1.5" strokeLinecap="round"/>
-        <line x1="36" y1="6" x2="50" y2="6" stroke="#C9862b" strokeWidth="1.5" strokeLinecap="round"/>
-        <line x1="38" y1="6" x2="38" y2="22" stroke="#C9862b" strokeWidth="1.5" strokeLinecap="round"/>
-        <line x1="48" y1="6" x2="48" y2="22" stroke="#C9862b" strokeWidth="1.5" strokeLinecap="round"/>
-        <path d="M35,22 Q43,26 51,22" stroke="#C9862b" strokeWidth="1.5" strokeLinecap="round"/>
-        <circle cx="30" cy="14" r="3" stroke="#C9862b" strokeWidth="1.5"/>
-      </svg>
-    ),
-  },
-  {
-    kind: 'amenity',
-    title: 'Garden',
-    description: 'Landscaped green space with plantation for better experience.',
-    tab: 'Garden',
-    customIcon: (
-      <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-16 h-16">
-        <circle cx="18" cy="20" r="10" stroke="#C9862b" strokeWidth="1.5"/>
-        <line x1="18" y1="30" x2="18" y2="44" stroke="#C9862b" strokeWidth="1.5" strokeLinecap="round"/>
-        <circle cx="38" cy="26" r="7" stroke="#C9862b" strokeWidth="1.5"/>
-        <line x1="38" y1="33" x2="38" y2="44" stroke="#C9862b" strokeWidth="1.5" strokeLinecap="round"/>
-        <line x1="4" y1="44" x2="52" y2="44" stroke="#C9862b" strokeWidth="1.5" strokeLinecap="round"/>
-        <circle cx="30" cy="41" r="2" stroke="#C9862b" strokeWidth="1.5"/>
-        <line x1="30" y1="43" x2="30" y2="44" stroke="#C9862b" strokeWidth="1.5" strokeLinecap="round"/>
-      </svg>
-    ),
-  },
-  {
-    kind: 'amenity',
-    title: 'Storm Water Drainage',
-    description: 'Efficient stormwater management system across the entire layout.',
-    tab: 'Drainage',
-    customIcon: (
-      <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-16 h-16">
-        <path d="M12,26 Q12,16 20,16 Q22,10 30,12 Q38,12 38,20 Q42,20 42,26 Q42,30 38,30 L12,30 Q8,30 8,26 Q8,22 12,26Z" stroke="#C9862b" strokeWidth="1.5" strokeLinejoin="round"/>
-        <line x1="16" y1="33" x2="14" y2="39" stroke="#C9862b" strokeWidth="1.5" strokeLinecap="round"/>
-        <line x1="25" y1="33" x2="23" y2="39" stroke="#C9862b" strokeWidth="1.5" strokeLinecap="round"/>
-        <line x1="34" y1="33" x2="32" y2="39" stroke="#C9862b" strokeWidth="1.5" strokeLinecap="round"/>
-        <rect x="14" y="40" width="22" height="6" rx="1" stroke="#C9862b" strokeWidth="1.5"/>
-        <line x1="19" y1="40" x2="19" y2="46" stroke="#C9862b" strokeWidth="1.5"/>
-        <line x1="25" y1="40" x2="25" y2="46" stroke="#C9862b" strokeWidth="1.5"/>
-        <line x1="31" y1="40" x2="31" y2="46" stroke="#C9862b" strokeWidth="1.5"/>
-      </svg>
-    ),
-  },
-  {
-    kind: 'amenity',
-    title: 'Open Space Public Utility',
-    description: 'An open-use area available to all the residents in the layout.',
-    tab: 'Public Utility',
-    customIcon: (
-      <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-16 h-16">
-        <rect x="8" y="30" width="40" height="4" rx="2" stroke="#C9862b" strokeWidth="1.5"/>
-        <line x1="14" y1="34" x2="14" y2="42" stroke="#C9862b" strokeWidth="1.5" strokeLinecap="round"/>
-        <line x1="42" y1="34" x2="42" y2="42" stroke="#C9862b" strokeWidth="1.5" strokeLinecap="round"/>
-        <rect x="8" y="22" width="40" height="4" rx="2" stroke="#C9862b" strokeWidth="1.5"/>
-        <line x1="14" y1="22" x2="14" y2="30" stroke="#C9862b" strokeWidth="1.5" strokeLinecap="round"/>
-        <line x1="42" y1="22" x2="42" y2="30" stroke="#C9862b" strokeWidth="1.5" strokeLinecap="round"/>
-        <circle cx="18" cy="16" r="3" stroke="#C9862b" strokeWidth="1.5"/>
-        <circle cx="28" cy="16" r="3" stroke="#C9862b" strokeWidth="1.5"/>
-        <circle cx="38" cy="16" r="3" stroke="#C9862b" strokeWidth="1.5"/>
-      </svg>
-    ),
-  },
-  {
-    kind: 'amenity',
-    title: 'Sewage Treatment Plant',
-    description: 'A dedicated sewage treatment plant for effective wastewater management.',
-    tab: 'STP',
-    customIcon: (
-      <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-16 h-16">
-        <rect x="4" y="20" width="18" height="22" rx="3" stroke="#C9862b" strokeWidth="1.5"/>
-        <rect x="34" y="20" width="18" height="22" rx="3" stroke="#C9862b" strokeWidth="1.5"/>
-        <path d="M6,28 Q9,25 13,28 Q17,31 20,28" stroke="#C9862b" strokeWidth="1.5" strokeLinecap="round"/>
-        <path d="M36,30 Q39,28 43,30 Q47,32 50,30" stroke="#C9862b" strokeWidth="1.5" strokeLinecap="round"/>
-        <line x1="22" y1="31" x2="34" y2="31" stroke="#C9862b" strokeWidth="1.5" strokeLinecap="round"/>
-        <polyline points="30,28 34,31 30,34" stroke="#C9862b" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-        <polygon points="24,16 32,16 30,20 26,20" stroke="#C9862b" strokeWidth="1.5" strokeLinejoin="round"/>
-        <path d="M13,20 L13,14 L4,14" stroke="#C9862b" strokeWidth="1.5" strokeLinecap="round"/>
-        <path d="M43,42 L43,48 L52,48" stroke="#C9862b" strokeWidth="1.5" strokeLinecap="round"/>
-      </svg>
-    ),
-  },
-  {
-    kind: 'amenity',
-    title: 'Open Space Compound Wall',
-    description: 'Fenced open area boundary to the space provided.',
-    tab: 'Compound Wall',
-    customIcon: (
-      <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-16 h-16">
-        <rect x="4" y="36" width="48" height="8" rx="2" stroke="#C9862b" strokeWidth="1.5"/>
-        <line x1="28" y1="36" x2="28" y2="44" stroke="#C9862b" strokeWidth="1.5"/>
-        <line x1="16" y1="36" x2="16" y2="44" stroke="#C9862b" strokeWidth="1.5"/>
-        <line x1="40" y1="36" x2="40" y2="44" stroke="#C9862b" strokeWidth="1.5"/>
-        <rect x="4" y="14" width="8" height="22" rx="1" stroke="#C9862b" strokeWidth="1.5"/>
-        <rect x="24" y="14" width="8" height="22" rx="1" stroke="#C9862b" strokeWidth="1.5"/>
-        <rect x="44" y="14" width="8" height="22" rx="1" stroke="#C9862b" strokeWidth="1.5"/>
-        <line x1="12" y1="20" x2="24" y2="20" stroke="#C9862b" strokeWidth="1.5" strokeLinecap="round"/>
-        <line x1="12" y1="28" x2="24" y2="28" stroke="#C9862b" strokeWidth="1.5" strokeLinecap="round"/>
-        <line x1="32" y1="20" x2="44" y2="20" stroke="#C9862b" strokeWidth="1.5" strokeLinecap="round"/>
-        <line x1="32" y1="28" x2="44" y2="28" stroke="#C9862b" strokeWidth="1.5" strokeLinecap="round"/>
-        <line x1="3" y1="14" x2="13" y2="14" stroke="#C9862b" strokeWidth="1.5" strokeLinecap="round"/>
-        <line x1="23" y1="14" x2="33" y2="14" stroke="#C9862b" strokeWidth="1.5" strokeLinecap="round"/>
-        <line x1="43" y1="14" x2="53" y2="14" stroke="#C9862b" strokeWidth="1.5" strokeLinecap="round"/>
-      </svg>
-    ),
-  },
-  {
-    kind: 'amenity',
-    title: 'Meditation Centre',
-    description: 'Dedicated space for contemplation and relaxation.',
-    tab: 'Meditation',
-    customIcon: (
-      <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-16 h-16">
-        <circle cx="28" cy="10" r="4" stroke="#C9862b" strokeWidth="1.5"/>
-        <line x1="28" y1="14" x2="28" y2="26" stroke="#C9862b" strokeWidth="1.5" strokeLinecap="round"/>
-        <path d="M28,19 Q20,22 16,26" stroke="#C9862b" strokeWidth="1.5" strokeLinecap="round"/>
-        <path d="M28,19 Q36,22 40,26" stroke="#C9862b" strokeWidth="1.5" strokeLinecap="round"/>
-        <path d="M28,26 Q18,28 16,26 Q12,32 18,36" stroke="#C9862b" strokeWidth="1.5" strokeLinecap="round"/>
-        <path d="M28,26 Q38,28 40,26 Q44,32 38,36" stroke="#C9862b" strokeWidth="1.5" strokeLinecap="round"/>
-        <path d="M16,36 Q28,40 40,36" stroke="#C9862b" strokeWidth="1.5" strokeLinecap="round"/>
-        <circle cx="28" cy="24" r="16" stroke="#C9862b" strokeWidth="0.8" strokeDasharray="2,3"/>
-      </svg>
-    ),
+    kind: 'feature',
+    title: 'Banquet Hall',
+    description:
+      'An elegant and spacious banquet hall equipped with modern amenities, perfect for hosting weddings, birthday celebrations, corporate events, community gatherings, and special occasions.',
+    tab: 'Banquet Hall',
+    image: '/banquet-hall.jpeg',
   },
 ];
 

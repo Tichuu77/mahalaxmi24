@@ -3,46 +3,53 @@ import React, { useState, useRef } from 'react';
 
 const features = [
   {
-    title: 'Kids Play Area',
+    title: 'gym',
     description:
-      'A vibrant, safe play zone designed for children of all ages — featuring colorful slides, swings, climbing frames, and soft-surface flooring surrounded by shaded seating for parents.',
-    tab: 'Kids Play Area',
-    image: '/aminity1.jpeg',
+      'A fully equipped modern fitness center featuring premium cardio machines, strength-training equipment, free weights, and dedicated workout zones to help residents maintain a healthy and active lifestyle.',
+    tab: 'gym',
+    image: '/gym.jpeg',
   },
   {
-    title: 'Pool',
+    title: 'amphitheater',
     description:
-      'A resort-style swimming pool with dedicated lanes, a shallow wading section for kids, and a sun deck with loungers — perfect for relaxation and recreation year-round.',
-    tab: 'Pool',
-    image: '/aminity2.jpeg',
+      'An open-air amphitheater designed for community gatherings, cultural events, performances, movie nights, and celebrations, offering comfortable seating in a vibrant outdoor setting.',
+    tab: 'amphitheater',
+    image: '/amphitheater.jpeg',
   },
   {
-    title: 'Basketball Court',
+    title: 'turf',
     description:
-      'A full-sized, professionally marked basketball court with high-quality flooring and floodlights — ideal for evening matches, fitness drills, and friendly neighbourhood tournaments.',
-    tab: 'Basketball Court',
-    image: '/aminity3.jpeg',
+      'A professionally maintained multi-purpose sports turf ideal for football, cricket, fitness activities, and recreational games, providing residents with an active and energetic environment.',
+    tab: 'turf',
+    image: '/turf.jpeg',
   },
   {
-    title: 'Badminton Court',
+    title: 'open party lawn',
     description:
-      'A covered, well-lit badminton court built to standard dimensions — offering residents a premium space for daily fitness, casual rallies, and competitive community play.',
-    tab: 'Badminton Court',
-    image: '/aminity4.jpeg',
+      'A beautifully landscaped open party lawn perfect for social gatherings, family functions, celebrations, and outdoor events, offering ample space amidst lush green surroundings.',
+    tab: 'open party lawn',
+    image: '/open-party-lawn.jpeg',
   },
   {
-    title: 'Meditation Area',
+    title: 'zumba room',
     description:
-      'A serene, dedicated meditation corner nestled amid lush greenery — designed with calming landscaping, natural stone seating, and peaceful water features to help you reconnect with inner stillness.',
-    tab: 'Meditation Area',
-    image: '/aminity5.jpeg',
+      'A spacious and energetic Zumba and dance studio with modern flooring, mirrors, sound systems, and ample ventilation, creating the ideal atmosphere for fitness and group workouts.',
+    tab: 'zumba room',
+    image: '/zumba-room.jpeg',
   },
   {
-    title: 'Yoga Park',
+    title: 'gazebo',
     description:
-      'An open-air yoga park with a smooth, spacious deck, morning sunlight, and a tranquil green backdrop — providing the perfect environment for daily practice, stretching, and mindful movement.',
-    tab: 'Yoga Park',
-    image: '/aminity6.jpeg',
+      'A charming gazebo surrounded by landscaped gardens, providing a peaceful retreat for relaxation, casual conversations, reading, or enjoying serene outdoor moments with family and friends.',
+    tab: 'gazebo',
+    image: '/gazebo.jpeg',
+  },
+  {
+    title: 'banquet hall',
+    description:
+      'An elegant and spacious banquet hall equipped with modern amenities, perfect for hosting weddings, birthday celebrations, corporate events, community gatherings, and special occasions.',
+    tab: 'banquet hall',
+    image: '/banquet-hall.jpeg',
   },
 ];
 
